@@ -24,8 +24,10 @@ img
 .btn-accent
 {
     background-color: var(--bg-accent-color);
-    color: #fff;
-    padding: 5px 65px;
+    color: var(--accent-text-color);
+    padding: 5px;
+    max-width: 100%;
+    text-align: center;
 }
 
 @supports(display: grid)
@@ -71,7 +73,7 @@ img
 
     .grid header nav
     {
-        background-color: #fff;
+        background-color: var(--primary-nav-bg-color);
         display: flex;
         justify-content: space-between;
         padding: 15px 22vw;
@@ -147,6 +149,22 @@ img
         margin-bottom: 15px;
         padding: 20px 10px;
     }
+    #aboutGrid #usedProducts .products
+    {
+        display: flex;
+    }
+    #aboutGrid #usedProducts .products .product-item
+    {
+        display: flex;
+        flex-direction: column;
+        margin: 5px 20px;
+    }
+    #aboutGrid #usedProducts .products .product-item .product-info
+    {
+        background-color: var(--bg-accent-color);   
+        color: var(--accent-text-color);
+        padding: 5px;
+    }    
     #aboutGrid #aboutSidebar
     {
         grid-area: sideBar;
@@ -166,15 +184,18 @@ img
     }
     #aboutGrid #aboutSidebar article
     {
+        background-color: var(--primary-content-bg-color);
+        display: grid;
+        grid-template-columns: 1;
+        grid-row-gap: 5px;
+        font-size: .6em;
         width: 100%;
-    }
-    #aboutGrid #aboutSidebar article
-    {
-        margin: 5px 0;
+        margin: 10px 0;
+        padding: 5px;
     }
     #aboutGrid #aboutSidebar article a
     {
-        margin: 5px;
+        margin: 10px 0;
         text-decoration: none;
         width: 100%;
     }

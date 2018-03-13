@@ -18,15 +18,27 @@
     </section>
     <section id="usedProducts">
         <h2>Brugte kajakker</h2>
-        <div class="prodcuts">
+        <div class="products">
             <div class="product-item">
-
+                <img src="./assets/media/kajak01.jpg" alt="" srcset="">
+                <span class="product-info">
+                    <p>navn</p>
+                    <p>pris</p>
+                </span>
             </div>
             <div class="product-item">
-
+                <img src="./assets/media/kajak01.jpg" alt="" srcset="">
+                <span class="product-info">
+                    <p>navn</p>
+                    <p>pris</p>
+                </span>
             </div>
             <div class="product-item">
-
+                <img src="./assets/media/kajak01.jpg" alt="" srcset="">
+                <span class="product-info">
+                    <p>navn</p>
+                    <p>pris</p>
+                </span>
             </div>
         </div>
     </section>
@@ -37,15 +49,18 @@
         <article>
             <img src="./assets/media/kajak01.jpg" alt="" srcset="">
             <h3>Nyheder</h3>
-            <p>Date</p>
-            <p>Date</p>
+            <span>
+                <p>07/04 Nye kajakker til salg</p>
+                <p>15/02 Pagaj-medlemmer vinder...</p>
+            </span>
             <a href="" class="btn-accent">Nyheder &raquo;</a>
         </article>
         <article>
             <img src="./assets/media/kajak01.jpg" alt="" srcset="">
-            <h3>Nyheder</h3>
-            <p>Date</p>
-            <p>Date</p>
+            <h3>2016</h3>
+            <p>Juli</p>
+            <p>04. Tur til Gudenåen</p>
+            <p>08. Weekenden i det sydfranske øhav</p>
             <a href="" class="btn-accent">Kalender &raquo;</a>
         </article>
     </section>
