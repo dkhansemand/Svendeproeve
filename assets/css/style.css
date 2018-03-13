@@ -10,11 +10,13 @@
 body
 {
     background-color: var(--body-bg-color);
-    font-family: 'Peddana', 'Bitter', Arial, Helvetica, sans-serif;
+    font-family: 'Bitter', 'Peddana', Arial, Helvetica, sans-serif;
     max-width: 100vw;
     overflow-x: hidden;
 }
-
+a{
+    color: var(--link-color);
+}
 img
 {
     height: auto;
@@ -66,6 +68,7 @@ img
     .grid header #topHeader h1
     {
         color: var(--header-font-color);
+        font-family: 'Peddana';
         font-size: 82px;
         font-weight: 500;
         margin-top: 100px;
@@ -195,6 +198,43 @@ img
         margin: 10px 0;
         text-decoration: none;
         width: 100%;
+    }
+
+    #newsGrid article
+    {
+        -webkit-box-shadow: 0px 2px 3px 2px rgba(176,174,176,0.75);
+        box-shadow: 0px 2px 3px 2px rgba(176,174,176,0.75);
+        background-color: var(--primary-content-bg-color);
+        display: grid;
+        grid-row-gap: 10px;
+        margin-top: 15px;
+        margin-bottom: 50px;
+        padding: 50px 10px 5px 10px;
+        width: 65%;
+    }
+
+    #newsGrid article a
+    {
+        background-color: var(--bg-accent-color);
+        color: var(--accent-text-color);
+        height: 30px;
+        justify-self: end;
+        margin-top: 5px;
+        padding: 5px 10px;
+        text-decoration: none;
+    }
+
+    #member
+    {
+        background-color: var(--primary-content-bg-color);
+        margin: 15px 0;
+        padding: 20px;
+        width: 100%;
+    }
+    #member .price-item
+    {
+        display: flex;
+        justify-content: space-between;
     }
 }
 

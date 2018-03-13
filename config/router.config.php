@@ -3,7 +3,7 @@ Router::SetViewFoler(__ROOT__ . DS . 'views' . DS);
 Router::SetDefaultRoute('/Om-klubben');
 const ROUTES = array(
                     [
-                        'path' => '/Om-klubben',
+                        'path' => '/Om-Klubben',
                         'controller' => 'AboutController',
                         'view' => 'about.view.php'
                     ],

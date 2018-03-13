@@ -15,16 +15,18 @@
             </div>
         </header>
         <main>
-            <nav>
-                <a href="">Om Klubben</a>
-                <a href="">Nyheder</a>
-                <a href="">Arrangementer</a>
-                <a href="">Galleri</a>
-                <a href="">Bådpark</a>
-                <a href="">Bliv Medlem</a>
-                <a href="">Min Side</a>
-                <a href="">Kontakt</a>
-            </nav>
+            <span>
+                <nav>
+                    <a href="<?=Router::Link('/Om-Klubben')?>">Om Klubben</a>
+                    <a href="<?=Router::Link('/Nyheder')?>">Nyheder</a>
+                    <a href="">Arrangementer</a>
+                    <a href="">Galleri</a>
+                    <a href="">Bådpark</a>
+                    <a href="<?=Router::Link('/Bliv-Medlem')?>">Bliv Medlem</a>
+                    <a href="">Min Side</a>
+                    <a href="">Kontakt</a>
+                </nav>
+            </span>
             <?php
                 require_once View::Render();
             ?>
