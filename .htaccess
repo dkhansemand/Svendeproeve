@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on 
+    RewriteBase /repetition/Router/
+    RewriteCond %{REQUEST_FILENAME} !-d  
+    RewriteCond %{REQUEST_FILENAME} !-f 
+    RewriteRule ^(.*)$ ./index.php 
+</IfModule>
+
+ErrorDocument 404 ./views/ErrorPages/404.view.php
