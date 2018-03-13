@@ -4,8 +4,8 @@ Router::SetDefaultRoute('/Om-klubben');
 const ROUTES = array(
                     [
                         'path' => '/Om-klubben',
-                        'controller' => 'HomeController',
-                        'view' => 'Home.view.php'
+                        'controller' => 'AboutController',
+                        'view' => 'about.view.php'
                     ],
                     [
                         'path' => '/Nyheder',
