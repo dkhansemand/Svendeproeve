@@ -30,7 +30,20 @@
             ?>
         </main>
         <footer>
-
+            <section>
+                <p>
+                    Kajakkluben Pagaj
+                </p>
+                <p>
+                    Loremvej 4
+                </p>
+                <p>
+                    tlf. 22 22 22 22
+                </p>
+                <p>
+                    mail@adresse.dk
+                </p>
+            </section>
         </footer>
     </section>
    <?php  

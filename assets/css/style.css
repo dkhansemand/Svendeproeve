@@ -19,12 +19,12 @@ body
     .grid
     {
         display: grid;
-        grid-template-columns: 3fr 6fr 3fr;
+        grid-template-columns: 22vw auto 22vw;
         grid-template-rows: 400px auto 55px;
         grid-template-areas: 
             "header header header"
             ". main ."
-            "footer footer footer"
+            "footer footer footer";
     }
 
     .grid header
@@ -36,7 +36,6 @@ body
         background-position-y: -10px;
         grid-area: header;
         position: relative;
-        width: 100vw;
     }
 
     .grid header #topHeader
@@ -61,7 +60,7 @@ body
         background-color: #fff;
         display: flex;
         justify-content: space-between;
-        padding: 10px 20vw;
+        padding: 10px 22vw;
         height: 50px;
         width: 100vw;
         position: absolute;
@@ -86,11 +85,21 @@ body
     .grid main
     {
         grid-area: main;
+        width: 100%;
     }
 
     .grid footer
     {
         background-color: var(--footer-bg-color);
+        color: var(--footer-text-color);
+        font-family: 'Bitter';
         grid-area: footer;
+        padding: 10px 22vw; 
+    }
+
+    .grid footer section
+    {
+        display: flex;
+        justify-content: space-between;
     }
 }
