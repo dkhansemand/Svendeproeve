@@ -1,9 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Bitter|Peddana');
+@import url('theme.css');
 *
 {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    background-color: var(--primary-bg-color);
+    font-family: 'Peddana', 'Bitter', Arial, Helvetica, sans-serif;
+    max-width: 100vw;
 }
 
 @supports(display: grid)
 {
+    .grid
+    {
+        display: grid;
+        grid-template-columns: 3fr 6fr 3fr;
+        grid-template-rows: 400px auto 55px;
+        grid-template-areas: 
+            "header header header"
+            ". main ."
+            "footer footer footer"
+    }
+
+    .grid header
+    {
+        background: url('../media/header.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position:  center;
+        background-position-y: -10px;
+        grid-area: header;
+        position: relative;
+        width: 100vw;
+    }
+
+    .grid header #topHeader
+    {
+        background-color: rgba(0,0,0, .25);
+        display: grid;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+    }
     
+    .grid header #topHeader h1
+    {
+        color: var(--header-font-color);
+        font-size: 82px;
+        font-weight: 500;
+        margin-top: 100px;
+    }
+
+    .grid header nav
+    {
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20vw;
+        height: 50px;
+        width: 100vw;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .grid header nav a
+    {
+        color: var(--primary-link-color);
+        font-family: 'Bitter';
+        text-decoration: none;    
+    }
+
+    .grid header nav a:hover
+    {
+        text-decoration: underline;
+        text-decoration-color: var(--primary-link-active-color);
+        /*border-bottom: 1px solid var(--primary-link-active-color);*/
+    }
+
+    .grid main
+    {
+        grid-area: main;
+    }
+
+    .grid footer
+    {
+        background-color: var(--footer-bg-color);
+        grid-area: footer;
+    }
 }

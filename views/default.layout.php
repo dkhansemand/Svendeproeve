@@ -10,20 +10,30 @@
 <body>
     <section class="grid">
         <header>
-            <h1>Kajakkluben Pagaj</h1>
+            <div id="topHeader">
+                <h1>Kajakkluben Pagaj</h1>
+            </div>
             <nav>
-                <a href="">Om os</a>
+                <a href="">Om Klubben</a>
+                <a href="">Nyheder</a>
+                <a href="">Arrangementer</a>
+                <a href="">Galleri</a>
+                <a href="">Bådpark</a>
+                <a href="">Bliv Medlem</a>
+                <a href="">Min Side</a>
+                <a href="">Kontakt</a>
             </nav>
         </header>
         <main>
-
+            <?php
+                require_once View::Render();
+            ?>
         </main>
         <footer>
 
         </footer>
     </section>
    <?php  
-        require_once View::Render();
     
         if(@__DEBUG__ === true)
         {

@@ -1,13 +1,3 @@
-<style>
-a{
-    text-decoration:none;
-    color: red;
-}
-.active
-{
-    color:green;
-}
-</style>
 <h1>HOME</h1>
 <pre>
 <?php
