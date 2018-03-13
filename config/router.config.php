@@ -1,6 +1,6 @@
 <?php
 Router::SetViewFoler(__ROOT__ . DS . 'views' . DS);
-Router::SetDefaultRoute('/Om-klubben');
+Router::SetDefaultRoute('/Om-Klubben');
 const ROUTES = array(
                     [
                         'path' => '/Om-Klubben',
@@ -34,9 +34,10 @@ const ROUTES = array(
                         'view' => 'member.view.php'
                     ],
                     [
-                        'path' => '/Min-side',
+                        'path' => '/Min-Side',
                         'controller' => 'ProfileController',
-                        'view' => 'profile.view.php'
+                        'view' => 'profile.view.php',
+                        'permissions' => []
                     ],
                     [
                         'path' => '/Kontakt',

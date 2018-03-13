@@ -17,13 +17,13 @@
         <main>
             <span>
                 <nav>
-                    <a href="<?=Router::Link('/Om-Klubben')?>">Om Klubben</a>
-                    <a href="<?=Router::Link('/Nyheder')?>">Nyheder</a>
+                    <a href="<?=Router::Link('/Om-Klubben')?>" class="<?=Router::IsActive('/Om-Klubben', 'active')?>">Om Klubben</a>
+                    <a href="<?=Router::Link('/Nyheder')?>" class="<?=Router::IsActive('/Nyheder', 'active')?>">Nyheder</a>
                     <a href="">Arrangementer</a>
                     <a href="">Galleri</a>
                     <a href="">Bådpark</a>
-                    <a href="<?=Router::Link('/Bliv-Medlem')?>">Bliv Medlem</a>
-                    <a href="">Min Side</a>
+                    <a href="<?=Router::Link('/Bliv-Medlem')?>" class="<?=Router::IsActive('/Bliv-Medlem', 'active')?>">Bliv Medlem</a>
+                    <a href="<?=Router::Link('/Min-Side')?>" class="<?=Router::IsActive('/Min-Side', 'active')?>">Min Side</a>
                     <a href="">Kontakt</a>
                 </nav>
             </span>

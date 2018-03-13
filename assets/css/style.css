@@ -91,6 +91,12 @@ img
         text-decoration: none;    
     }
 
+    .grid main nav .active
+    {
+        text-decoration: underline;
+        text-decoration-color: var(--primary-link-active-color);
+    }
+
     .grid main nav a:hover
     {
         text-decoration: underline;
