@@ -13,6 +13,8 @@
             <div id="topHeader">
                 <h1>Kajakkluben Pagaj</h1>
             </div>
+        </header>
+        <main>
             <nav>
                 <a href="">Om Klubben</a>
                 <a href="">Nyheder</a>
@@ -23,8 +25,6 @@
                 <a href="">Min Side</a>
                 <a href="">Kontakt</a>
             </nav>
-        </header>
-        <main>
             <?php
                 require_once View::Render();
             ?>

@@ -35,7 +35,7 @@ img
     .grid
     {
         display: grid;
-        grid-template-columns: 22vw auto 22vw;
+        grid-template-columns: minmax(10vw,22vw) auto minmax(10vw,22vw);
         grid-template-rows: 400px auto 55px;
         grid-template-areas: 
             "header header header"
@@ -46,10 +46,11 @@ img
     .grid header
     {
         background: url('../media/header.jpg');
+        background-attachment: fixed;
         background-repeat: no-repeat;
         background-size: cover;
         background-position:  center;
-        background-position-y: -10px;
+        background-position-y: -20px;
         grid-area: header;
         position: relative;
     }
@@ -71,27 +72,24 @@ img
         margin-top: 100px;
     }
 
-    .grid header nav
+    .grid main nav
     {
         background-color: var(--primary-nav-bg-color);
-        display: flex;
+        display: grid;
+        grid-auto-flow:column;
         justify-content: space-between;
-        padding: 15px 22vw;
+        align-items: center;
         height: 50px;
-        width: 100vw;
-        position: absolute;
-        bottom: 0;
-        left: 0;
     }
 
-    .grid header nav a
+    .grid main nav a
     {
         color: var(--primary-link-color);
         font-family: 'Bitter';
         text-decoration: none;    
     }
 
-    .grid header nav a:hover
+    .grid main nav a:hover
     {
         text-decoration: underline;
         text-decoration-color: var(--primary-link-active-color);
@@ -198,5 +196,85 @@ img
         margin: 10px 0;
         text-decoration: none;
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .grid
+    {
+        
+        grid-template-columns: minmax(5vw,8vw) auto minmax(5vw,8vw);
+        grid-template-areas: 
+            "header header header"
+            ". main ."
+            "footer footer footer";
+    }
+    .grid footer
+    {
+        padding: 15px 10vw; 
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .grid
+    {
+        
+        grid-template-columns: 1fr;
+        grid-template-rows: 200px auto 55px;
+        grid-template-areas: 
+            "header"
+            "main"
+            "footer";
+    }
+    .grid header
+    {
+
+        background-position-y: -50px;
+
+    }
+    .grid header #topHeader h1
+    {
+        font-size: 56px;
+        font-weight: 500;
+        margin-top: 50px;
+    }
+    .grid main nav
+    {
+        height: auto;
+        grid-auto-flow:initial;
+        grid-template-columns: repeat(4,1fr);
+        justify-content: space-between;
+        align-items: initial;
+        padding: 10px 15px;
+    }
+    #aboutGrid
+    {
+        grid-template-areas: 
+            "aboutContent"
+            "usedProducts"
+            "sideBar";
+        grid-template-columns: 8fr 3fr;
+        grid-column-gap: 15px;
+    }
+    .grid footer
+    {
+        padding: 15px 5px; 
+    }
+}
+@media screen and (max-width: 562px) {
+    .grid header
+    {
+        background-position-y: -80px;
+    }
+    .grid header #topHeader h1
+    {
+        font-size: 48px;
+        font-weight: 500;
+        margin-top: 20px;
+    }
+    .grid main nav
+    {
+        grid-template-columns: repeat(2,1fr);
+        padding: 10px 15px;
     }
 }
