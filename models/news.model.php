@@ -52,4 +52,9 @@ class NewsModel extends Model
     {
         return $this->query("SELECT `newsId`,`newsTitle`, `newsContent`, `newsStartDate`, `newsEndDate` FROM `news` WHERE `newsId` = :ID", [':ID' => $ID])->fetch();
     }
+
+    public function GetAllArticlesByDate() : array
+    {
+        return $this->query("SELECT `newsId`,`newsTitle`, `newsContent`, `newsStartDate` FROM `news` WHERE DATE(NOW()) between `newsStartDate` AND `newsEndDate`ORDER BY `newsStartDate` DESC;")->fetchAll();
+    }
 }

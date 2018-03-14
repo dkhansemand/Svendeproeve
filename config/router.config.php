@@ -11,6 +11,7 @@ const ROUTES = array(
                     [
                         'path' => '/Nyheder',
                         'controller' => 'NewsController',
+                        'model' => 'news.model',
                         'params' => ['page'],
                         'view' => 'news.view.php'
                     ],
@@ -48,7 +49,8 @@ const ROUTES = array(
                     [
                         'path' => '/Login',
                         'view' => 'Login.view.php',
-                        'controller' => 'LoginController'
+                        'controller' => 'LoginController',
+                        'model' => 'login.model'
                     ],
                     [
                         'path' => '/Logud',
