@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Kajakkluben Pagaj | Administrationspanel</title>
-    <link rel="stylesheet" href="<?=Router::$BASE?>assets/css/style.css">
+    <link rel="stylesheet" href="<?=Router::$BASE?>assets/css/styleAdmin.css">
 </head>
 <body>
     <section class="grid">
@@ -17,14 +17,15 @@
         <main>
             <span>
                 <nav>
-                    <a href="<?=Router::Link('/Om-Klubben')?>" class="<?=Router::IsActive('/Om-Klubben', 'active')?>">Om Klubben</a>
-                    <a href="<?=Router::Link('/Nyheder')?>" class="<?=Router::IsActive('/Nyheder', 'active')?>">Nyheder</a>
-                    <a href="">Arrangementer</a>
-                    <a href="">Galleri</a>
-                    <a href="">Bådpark</a>
-                    <a href="<?=Router::Link('/Bliv-Medlem')?>" class="<?=Router::IsActive('/Bliv-Medlem', 'active')?>">Bliv Medlem</a>
-                    <a href="<?=Router::Link('/Min-Side')?>" class="<?=Router::IsActive('/Min-Side', 'active')?>">Min Side</a>
-                    <a href="">Kontakt</a>
+                    <a href="<?=Router::Link('/')?>">Til forsiden</a>
+                    <a href="<?=Router::Link('/Admin/Nyheder')?>" class="<?=Router::IsActive('/Admin/Nyheder', 'active')?>">Nyheder</a>
+                    <a href="<?=Router::Link('/Admin/Arrangementer')?>" class="<?=Router::IsActive('/Admin/Arrangementer', 'active')?>">Arrangementer</a>
+                    <a href="<?=Router::Link('/Admin/Galleri')?>" class="<?=Router::IsActive('/Admin/Galleri', 'active')?>">Galleri</a>
+                    <a href="<?=Router::Link('/Admin/Bådpark')?>" class="<?=Router::IsActive('/Admin/Bådpark', 'active')?>">Bådpark</a>
+                    <a href="<?=Router::Link('/Admin/Medlemmer')?>" class="<?=Router::IsActive('/Admin/Medlemmer', 'active')?>">Medlememr</a>
+                    <a href="<?=Router::Link('/Admin/Min-Side')?>" class="<?=Router::IsActive('/Admin/Min-Side', 'active')?>">Min Side</a>
+                    <a href="<?=Router::Link('/Admin/Beskeder')?>" class="<?=Router::IsActive('/Admin/Beskeder', 'active')?>">Beskeder (0)</a>
+                    <a href="<?=Router::Link('/Admin/Nyhedsbrev')?>" class="<?=Router::IsActive('/Admin/Nyhedsbrev', 'active')?>">Nyhedsbrev</a>
                 </nav>
             </span>
             <?php

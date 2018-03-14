@@ -11,4 +11,7 @@
     --bg-accent-color: #87ceeb;
     --link-color: #87ceeb;
     --primary-link-active-color: #87ceeb;
+    --err-msg-text-color: #f00;
+    --btn-success-bg-color: #8bc34a;
+    --btn-error-bg-color: #f44336;
 }

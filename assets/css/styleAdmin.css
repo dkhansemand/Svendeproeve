@@ -26,13 +26,54 @@ img
     width: 100%;
 }
 
+.btn
+{
+    width: 60px;
+}
+
 .btn-accent
 {
     background-color: var(--bg-accent-color);
+    border: 0;
     color: var(--accent-text-color);
     padding: 10px 5px;
-    max-width: 100%;
+    width: fit-content;
     text-align: center;
+    text-decoration: none;
+}
+
+.btn-error
+{
+    background-color: var(--btn-error-bg-color);
+    border: 0;
+    color: var(--accent-text-color);
+    padding: 10px 5px;
+    text-align: center;
+    text-decoration: none;
+    width: fit-content;
+}
+
+.btn-success
+{
+    background-color: var(--btn-success-bg-color);
+    border: 0;
+    color: var(--accent-text-color);
+    padding: 10px 5px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.err-msg
+{
+    color: var(--err-msg-text-color);
+    padding: 2px 5px;
+}
+
+.delete-buttons
+{
+    display: grid;
+    grid-template-columns: 50px auto;
+    grid-column-gap: 30px;
 }
 
 @supports(display: grid)
@@ -129,122 +170,81 @@ img
         padding: 0 20px;
     }
 
-    #aboutGrid
-    {
-        display: grid;
-        grid-template-areas: 
-            "aboutContent sideBar"
-            "usedProducts sideBar";
-        grid-template-columns: 8fr 3fr;
-        grid-column-gap: 15px;
-        font-family: 'Bitter';
-        margin-top: 15px;
-    }
-    #aboutGrid #aboutContent
-    {
-        grid-area: aboutContent;
-        background-color: var(--primary-content-bg-color);
-        padding: 10px;
-        margin-bottom: 15px;
-    }
-    #aboutGrid #aboutContent h1
-    {
-        margin-bottom: 10px;
-    }
-    #aboutGrid #usedProducts
-    {
-        background-color: var(--primary-content-bg-color);
-        grid-area: usedProducts;
-        margin-bottom: 15px;
-        padding: 20px 10px;
-    }
-    #aboutGrid #usedProducts .products
-    {
-        display: flex;
-    }
-    #aboutGrid #usedProducts .products .product-item
+    #news
     {
         display: flex;
         flex-direction: column;
-        margin: 5px 20px;
+        height: 100%;
     }
-    #aboutGrid #usedProducts .products .product-item .product-info
+    #news h2
     {
-        background-color: var(--bg-accent-color);   
-        color: var(--accent-text-color);
-        padding: 5px;
-    }    
-    #aboutGrid #aboutSidebar
-    {
-        grid-area: sideBar;
+        margin-bottom: 10px;
     }
-    #aboutGrid #aboutSidebar form
+    #news a
     {
-        background-color: var(--bg-accent-color);
-        padding: 5px;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
+    }
+    #news table
+    {
+        border-collapse: collapse;
         width: 100%;
+        text-align: left;
     }
-    #aboutGrid #aboutSidebar form input
+    #news table thead
     {
-        width: 100%;
-        height: 30px;
-        padding: 5px;
+        border-bottom: 1px solid #000;
+        margin-bottom: 10px;
     }
-    #aboutGrid #aboutSidebar article
+    #news table tbody tr
     {
-        background-color: var(--primary-content-bg-color);
-        display: grid;
-        grid-template-columns: 1;
-        grid-row-gap: 5px;
-        font-size: .8em;
-        width: 100%;
-        margin: 10px 0;
-        padding: 5px;
-    }
-    #aboutGrid #aboutSidebar article a
-    {
-        margin: 10px 0;
-        text-decoration: none;
-        width: 100%;
-    }
+        border-bottom: 1px solid #000;
 
-    #newsGrid article
+    }
+    #news table tbody tr td
     {
-        -webkit-box-shadow: 0px 2px 3px 2px rgba(176,174,176,0.75);
-        box-shadow: 0px 2px 3px 2px rgba(176,174,176,0.75);
-        background-color: var(--primary-content-bg-color);
+        height: 35px;
+        padding: 5px 0;
+    }
+    #news table tbody tr:hover
+    {
+        background-color: rgba(0,0,0,.05);
+    }
+    #newsView{
+        background-color: var( --primary-content-bg-color);
+        margin: 10px 0 30px 0;
+        padding: 5px 10px;
+    }
+    #newsView h2
+    {
+        margin-bottom: 10px;
+    }
+    #newsView form
+    {
         display: grid;
         grid-row-gap: 10px;
-        margin-top: 15px;
-        margin-bottom: 50px;
-        padding: 50px 10px 5px 10px;
-        width: 65%;
     }
-
-    #newsGrid article a
-    {
-        background-color: var(--bg-accent-color);
-        color: var(--accent-text-color);
-        height: 30px;
-        justify-self: end;
-        margin-top: 5px;
-        padding: 5px 10px;
-        text-decoration: none;
-    }
-
-    #member
-    {
-        background-color: var(--primary-content-bg-color);
-        margin: 15px 0;
-        padding: 20px;
-        width: 100%;
-    }
-    #member .price-item
+    #newsView form .input-field
     {
         display: flex;
-        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
     }
+    #newsView form .input-field input
+    {
+        padding: 5px;
+    }
+    #newsView form .input-field label
+    {
+        margin-right: 10px;
+    }
+    #newsView form .btn
+    {
+        cursor: pointer;
+        font-size: 1.1em;
+        justify-self: end;
+    }
+
+    
 }
 
 @media screen and (max-width: 960px) {
@@ -304,15 +304,7 @@ img
     {
         margin: 5px 0;
     }
-    #aboutGrid
-    {
-        grid-template-areas: 
-            "aboutContent"
-            "usedProducts"
-            "sideBar";
-        grid-template-columns: 8fr 3fr;
-        grid-column-gap: 15px;
-    }
+
     .grid footer
     {
         padding: 15px 5px; 

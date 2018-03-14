@@ -152,6 +152,14 @@ class Router extends Core
                     }
                 }
 
+                if(array_key_exists('model', self::$Routes[self::$RouteIndex]))
+                {
+                    if(!self::CanLoadModel(self::$Routes[self::$RouteIndex]['model']))
+                    {
+                        throw new Exception("Cannot load model '".self::$Routes[self::$RouteIndex]['model']."'");
+                    }
+                }
+
                 if(array_key_exists('layout', self::$Routes[self::$RouteIndex]))
                 {
                     try

@@ -4,9 +4,9 @@ class View extends Core
 {
     private static $DATA = null;
 
-    public static function GetData()
+    public static function CallModel()
     {
-        return self::$DATA;
+        return self::$Model;
     }
 
     public static function Layout() : string
@@ -29,19 +29,28 @@ class View extends Core
     {
         try
         {
-            $model = str_replace('.view.php', '', self::$View);
+           /*  $model = str_replace('.view.php', '', self::$View);
             $Formattedmodel = str_replace('\\', '\\\\',$model);
             foreach(glob(__ROOT__ . DS  . 'models' . DS . '{*.model.php,*'.DS.'*.model.php}',GLOB_BRACE ) as $modelFile)
             {
-                //echo '<br>File: ',$modelFile,' | preg_M: ', preg_match('/'.$model.'/', $modelFile);
+                //echo '<br>Model: ', $model,' File: ',$modelFile,' | preg_M: ', preg_match('/'.$model.'/', $modelFile);
                 if(preg_match('/'.$Formattedmodel.'/', $modelFile) && file_exists($modelFile)){
                     require_once $modelFile;
                     $modelClass = self::file_get_php_classes($modelFile);
                     self::$Model = new $modelClass();
                     self::$DATA = call_user_func([self::$Model, '__construct']);
                 }
+            } */
+            if(!is_null(self::$Model))
+            {
+                require_once __ROOT__ . DS . 'models' . DS . self::$Model . '.php';
+                $modelClass = ucfirst(explode('.', self::$Model)[0]) . 'Model';
+                self::$Model = new $modelClass();
+                /* if(method_exists(self::$Model, '__construct'))
+                {
+                    self::$DATA = call_user_func([self::$Model, '__construct']);
+                } */
             }
-            
             return Router::GetViewFolder() . self::$View;
         }
         catch(Exception $err)

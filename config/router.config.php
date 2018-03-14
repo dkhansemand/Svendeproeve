@@ -69,12 +69,37 @@ const ROUTES = array(
                         ]
                     ],
                     [
-                        'path' => '/Admin/Dashboard',
+                        'path' => '/Admin/Nyheder',
                         'layout' => 'admin',
-                        'view' => 'admin'.DS.'dashboard.view.php',
-                        'controller' => 'AdminController',
-                        'permissions' => [
-                            
-                        ]
+                        'view' => 'admin'.DS.'news'.DS.'news.view.php',
+                        'controller' => 'NewsController',
+                        'model' => 'news.model',
+                        'permissions' => []
+                    ],
+                    [
+                        'path' => '/Admin/Nyheder/Opret',
+                        'layout' => 'admin',
+                        'view' => 'admin'.DS.'news'.DS.'create.view.php',
+                        'controller' => 'NewsController',
+                        'model' => 'news.model',
+                        'permissions' => []
+                    ],
+                    [
+                        'path' => '/Admin/Nyheder/Ret',
+                        'layout' => 'admin',
+                        'view' => 'admin'.DS.'news'.DS.'edit.view.php',
+                        'controller' => 'NewsController',
+                        'model' => 'news.model',
+                        'params' => ['ID'],
+                        'permissions' => []
+                    ],
+                    [
+                        'path' => '/Admin/Nyheder/Slet',
+                        'layout' => 'admin',
+                        'view' => 'admin'.DS.'news'.DS.'delete.view.php',
+                        'controller' => 'NewsController',
+                        'model' => 'news.model',
+                        'params' => ['ID'],
+                        'permissions' => []
                     ]
                 );
