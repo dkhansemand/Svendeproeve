@@ -12,7 +12,7 @@
         }
     }
 ?>
-<section id="newsCreate">
+<section id="newsView">
     <h2>Opret</h2>
     <?= isset($success) ? '<p>'.$success.'</p>' : ''; ?>
     <form action="" method="post">

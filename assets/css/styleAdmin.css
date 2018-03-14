@@ -237,7 +237,7 @@ img
     {
         margin-right: 10px;
     }
-    #newsView form .btn
+    #newsView form button
     {
         cursor: pointer;
         font-size: 1.1em;
