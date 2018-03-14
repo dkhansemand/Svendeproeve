@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Kajakkluben Pagaj | Administrationspanel</title>
+    <title>Kajakklubben Pagaj | Administrationspanel</title>
     <link rel="stylesheet" href="<?=Router::$BASE?>assets/css/styleAdmin.css">
 </head>
 <body>
     <section class="grid">
         <header>
             <div id="topHeader">
-                <h1>Kajakkluben Pagaj - Admin</h1>
+                <h1>Kajakklubben Pagaj - Admin</h1>
             </div>
         </header>
         <main>
@@ -35,7 +35,7 @@
         <footer>
             <section>
                 <p>
-                    Kajakkluben Pagaj
+                    Kajakklubben Pagaj
                 </p>
                 <p>
                     Loremvej 4

@@ -184,28 +184,28 @@ img
     {
         margin-bottom: 10px;
     }
-    #news table
+    .view-table
     {
         border-collapse: collapse;
         width: 100%;
         text-align: left;
     }
-    #news table thead
+    .view-table thead
     {
         border-bottom: 1px solid #000;
         margin-bottom: 10px;
     }
-    #news table tbody tr
+    .view-table tbody tr
     {
         border-bottom: 1px solid #000;
 
     }
-    #news table tbody tr td
+    .view-table tbody tr td
     {
         height: 35px;
         padding: 5px 0;
     }
-    #news table tbody tr:hover
+    .view-table tbody tr:hover
     {
         background-color: rgba(0,0,0,.05);
     }
@@ -244,6 +244,12 @@ img
         justify-self: end;
     }
 
+    #eventsView
+    {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
     
 }
 

@@ -1,7 +1,7 @@
 <section id="news">
     <h2>Nyheder</h2>
     <a href="<?=Router::Link('/Admin/Nyheder/Opret')?>" class="btn-accent">Opret nyhed</a>
-    <table>
+    <table class="view-table">
         <thead>
             <tr>
                 <th>Titel</th>
@@ -42,9 +42,4 @@
             ?>
         </tbody>
     </table>
-    <pre>
-    <?php
-        //var_dump(View::CallModelMethod('GetAllArticles'));
-    ?>  
-    </pre>
 </section>

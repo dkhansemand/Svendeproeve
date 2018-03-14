@@ -7,7 +7,7 @@ class HomeModel extends Model
     {
         parent::__construct();
         
-       return $this->query("SELECT * FROM users")->fetchAll();
+      
     }
 
 }
