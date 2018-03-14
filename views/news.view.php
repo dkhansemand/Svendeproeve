@@ -13,7 +13,7 @@
                 <h2><?=$article->newsTitle?></h2>
                 <h4><?=(new DateTime($article->newsStartDate))->format('d. F - Y')?></h4>
                 <p>
-                    <?=htmlspecialchars_decode($article->newsContent)?>
+                    <?=(strlen($article->newsContent) > 200) ? substr($article->newsContent, 0, 200) . ' ...' : htmlspecialchars_decode($article->newsContent) ?>
                 </p>
                 <a href="">Læs mere...</a>
             </article>
