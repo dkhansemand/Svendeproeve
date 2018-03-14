@@ -5,6 +5,7 @@ class Router extends Core
     public static   $BASE = null;
     private static  $DefaultRoute  = null,
                     $currentRoute = null,
+                    $errorPagePath = null,
                     $params = [],
                     $RouteIndex = null,
                     $Routes = null,
@@ -39,6 +40,16 @@ class Router extends Core
     public static function SetDefaultRoute(string $route) : void
     {
         self::$DefaultRoute = $route;
+    }
+
+    public static function SetErrorPath(string $path) : void
+    {
+        self::$errorPagePath = $path;
+    }
+
+    public static function GetErrorPath() : string
+    {
+        return self::$errorPagePath;
     }
 
     public static function GetParamByName(string $param) : string
@@ -189,7 +200,7 @@ class Router extends Core
                 if(file_exists(self::$ViewFolder .'ErrorPages' . DS . '404.view.php'))
                 {
                     (new FlashMessages)->error('Kunne ikke finde siden "'.self::$REQ_ROUTE.'"', null, true);
-                    self::Redirect('/Error/404');
+                    self::Redirect(self::$errorPagePath . '/404');
                 }
                 else
                 {

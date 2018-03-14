@@ -72,13 +72,13 @@ class Guard extends JWT
 
             if( $permCnt !== sizeof(self::$Permissions) )
             {
-                Router::Redirect('/Error/403');
+                Router::Redirect( Router::GetErrorPath() . '/403');
             }
         }
         catch(Exception $err)
         {
             session_destroy();
-            Router::Redirect('/Error/500');
+            Router::Redirect(Router::GetErrorPath() . '/500');
             exit;
         }
     }

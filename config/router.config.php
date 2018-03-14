@@ -1,6 +1,7 @@
 <?php
 Router::SetViewFoler(__ROOT__ . DS . 'views' . DS);
 Router::SetDefaultRoute('/Om-Klubben');
+Router::SetErrorPath('/Fejl');
 const ROUTES = array(
                     [
                         'path' => '/Om-Klubben',
@@ -50,7 +51,7 @@ const ROUTES = array(
                         'controller' => 'LoginController'
                     ],
                     [
-                        'path' => '/Logout',
+                        'path' => '/Logud',
                         'view' => 'logout.php'
                     ],
                     [
@@ -64,7 +65,7 @@ const ROUTES = array(
                         'view' => 'admin'.DS.'dashboard.view.php',
                         'controller' => 'AdminController',
                         'permissions' => [
-                            Permission::PERM_ADMIN_PANEL_ACCESS
+                            
                         ]
                     ],
                     [
@@ -73,7 +74,7 @@ const ROUTES = array(
                         'view' => 'admin'.DS.'dashboard.view.php',
                         'controller' => 'AdminController',
                         'permissions' => [
-                            Permission::PERM_ADMIN_PANEL_ACCESS
+                            
                         ]
                     ]
                 );
