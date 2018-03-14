@@ -18,6 +18,7 @@ const ROUTES = array(
                     [
                         'path' => '/Arrangementer',
                         'controller' => 'EventsController',
+                        'model' => 'Events.model',
                         'view' => 'events.view.php'
                     ],
                     [

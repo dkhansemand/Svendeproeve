@@ -14,7 +14,7 @@ class MediaUpload extends Database
         9 => 'Filtypen er ikke tilladt at uploade!'
     );
     private static $mimeType = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
-    private static $uploadFolder = __ROOT__ . 'assets' . DS . 'media' . DS;
+    private static $uploadFolder = __ROOT__ . DS . 'assets' . DS . 'media' . DS;
 
     public static function UploadImage(string $inputName, string $subfolder = '', array $sizes = [])
     {

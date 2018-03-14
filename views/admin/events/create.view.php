@@ -1,4 +1,18 @@
-<section id="eventCreate">
+<?php
+    if(isset($POST['btnEventCreate'])){
+        $return = View::UseController()->InsertEvent($POST, 'eventCover', $POST['_once_default']);
+        //var_dump($POST);
+        if(isset($return['err']))
+        {
+            $success = 'Der skete en fejl! <br> ' . ($return['token'] ?? $return['function'] ?? $return['insert'] ?? null);
+        }elseif($return === true)
+        {
+            $success = 'Arrangemntet er nu blevet oprettet';
+            unset($POST);
+        }
+    }
+?>
+<section id="eventView">
     <h2>Opret arrangement</h2>
     <?= isset($success) ? '<p>'.$success.'</p>' : ''; ?>
     <form action="" method="post" enctype="multipart/form-data">
@@ -6,7 +20,7 @@
         <small>Felter med <em>* </em> skal udfyldes</small>
         <div class="input-field">
             <label for="eventTitle">Titel</label>
-            <input type="text" name="eventTitle" id="eventTitle" placeholder="Nyheds titel" value="<?=$POST['eventTitle'] ?? null?>" required> *
+            <input type="text" name="eventTitle" id="eventTitle" placeholder="Arrangenment titel" value="<?=$POST['eventTitle'] ?? null?>" required> *
         </div>   
         <?php
             if(isset($return['errors']['eventTitle']))
