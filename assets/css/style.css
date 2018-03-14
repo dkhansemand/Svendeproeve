@@ -219,7 +219,12 @@ img
         margin-top: 15px;
         margin-bottom: 50px;
         padding: 50px 10px 5px 10px;
-        width: 65%;
+        width: 65%;   
+        word-break: break-all;   
+    }
+
+    #newsGrid article p {
+        width: 90%;
     }
 
     #newsGrid article a

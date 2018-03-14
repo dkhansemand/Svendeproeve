@@ -17,7 +17,7 @@ class NewsController extends Core
         {
             $error = [];
             $title = Validate::stringBetween($newsData['newsTitle'], 2, 45) ? $newsData['newsTitle'] : $error['newsTitle'] = 'Titlen må kun inholde bogstaver og tal. Samt være mellem 2 og 45 tegn';
-            $content = !empty($newsData['newsContent']) ? $newsData['newsContent'] : $error['newsContent'] = 'Indhold må ikke være tomt.';
+            $content = !empty($newsData['newsContent']) ? htmlentities($newsData['newsContent'],ENT_HTML5) : $error['newsContent'] = 'Indhold må ikke være tomt.';
             $startDate = Validate::date($newsData['newsStartDate']) ? $newsData['newsStartDate'] : $error['newsStartDate'] = 'Dato er ikke i korrekt format';
             $endDate = Validate::date($newsData['newsEndDate']) ? $newsData['newsEndDate'] : $error['newsEndDate'] = 'Dato er ikke i korrekt format';
 
@@ -45,7 +45,7 @@ class NewsController extends Core
         {
             $error = [];
             $title = Validate::stringBetween($newsData['newsTitle'], 2, 45) ? $newsData['newsTitle'] : $error['newsTitle'] = 'Titlen må kun inholde bogstaver og tal. Samt være mellem 2 og 45 tegn';
-            $content = !empty($newsData['newsContent']) ? $newsData['newsContent'] : $error['newsContent'] = 'Indhold må ikke være tomt.';
+            $content = !empty($newsData['newsContent']) ? htmlentities($newsData['newsContent'], ENT_HTML5) : $error['newsContent'] = 'Indhold må ikke være tomt.';
             $startDate = Validate::date($newsData['newsStartDate']) ? $newsData['newsStartDate'] : $error['newsStartDate'] = 'Dato er ikke i korrekt format';
             $endDate = Validate::date($newsData['newsEndDate']) ? $newsData['newsEndDate'] : $error['newsEndDate'] = 'Dato er ikke i korrekt format';
 
