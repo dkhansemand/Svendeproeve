@@ -79,6 +79,14 @@ const ROUTES = array(
                         'permissions' => []
                     ],
                     [
+                        'path' => '/Admin/Arrangement/Opret',
+                        'layout' => 'admin',
+                        'view' => 'admin'.DS.'events'.DS.'create.view.php',
+                        'controller' => 'EventsController',
+                        'model' => 'Events.model',
+                        'permissions' => []
+                    ],
+                    [
                         'path' => '/Admin/Nyheder',
                         'layout' => 'admin',
                         'view' => 'admin'.DS.'news'.DS.'news.view.php',
