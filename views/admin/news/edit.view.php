@@ -41,7 +41,7 @@
             <?php
                 }
             ?>
-            <textarea name="newsContent" id="newsContent" cols="50" rows="10"><?=$POST['newsContent'] ?? html_entity_decode($article->newsContent, ENT_HTML5) ?? null?></textarea>
+            <textarea name="newsContent" id="newsContent" cols="50" rows="10"><?=$POST['newsContent'] ?? htmlspecialchars_decode($article->newsContent) ?? null?></textarea>
         </div>
         <div class="input-field">
             <label for="newsStartDate">Start dato</label>

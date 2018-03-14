@@ -52,9 +52,9 @@ class Router extends Core
         return self::$errorPagePath;
     }
 
-    public static function GetParamByName(string $param) : string
+    public static function GetParamByName(string $param)
     {
-        return rawurldecode(self::$params[$param]) ?? null;
+        return self::$params[$param] ?? null;
     }
 
     public static function GetParamByIndex(int $index) : string

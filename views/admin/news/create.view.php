@@ -1,10 +1,10 @@
 <?php
     if(isset($POST['btnNewsCreate'])){
         $return = View::UseController()->InsertNewsArticle($POST, $POST['_once_default']);
+        //var_dump($POST);
         if(isset($return['err']))
         {
             $success = 'Der skete en fejl! <br> ' . ($return['token'] ?? $return['function'] ?? $return['insert'] ?? null);
-            //var_dump($return);
         }elseif($return === true)
         {
             $success = 'Nyheden er nu blevet oprettet';

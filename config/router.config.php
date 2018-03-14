@@ -12,7 +12,7 @@ const ROUTES = array(
                         'path' => '/Nyheder',
                         'controller' => 'NewsController',
                         'model' => 'news.model',
-                        'params' => ['page'],
+                        'params' => ['PAGE'],
                         'view' => 'news.view.php'
                     ],
                     [
