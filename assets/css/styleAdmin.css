@@ -187,8 +187,9 @@ img
     .view-table
     {
         border-collapse: collapse;
-        width: 100%;
+        margin: 10px 0;
         text-align: left;
+        width: 100%;
     }
     .view-table thead
     {

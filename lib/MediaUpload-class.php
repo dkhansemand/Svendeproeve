@@ -35,7 +35,7 @@ class MediaUpload extends Database
                     mkdir(self::$uploadFolder, 0755, true);
                 }
         
-                $fileName = time() . '_' . substr($file['name'], strrpos($file['name'], '.', -10), 10);
+                $fileName = time() . '_' . substr(hash('sha256', $file['name']), 0, -15);
                 $fileName = str_replace(' ', '', $fileName) . str_replace('image/', '.', $imageData['mime']);
                 if(sizeof($sizes) > 0){
                     $mediaIds = [];

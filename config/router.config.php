@@ -88,6 +88,24 @@ const ROUTES = array(
                         'permissions' => []
                     ],
                     [
+                        'path' => '/Admin/Arrangement/Ret',
+                        'layout' => 'admin',
+                        'view' => 'admin'.DS.'events'.DS.'edit.view.php',
+                        'controller' => 'EventsController',
+                        'model' => 'Events.model',
+                        'params' => ['ID'],
+                        'permissions' => []
+                    ],
+                    [
+                        'path' => '/Admin/Arrangement/Slet',
+                        'layout' => 'admin',
+                        'view' => 'admin'.DS.'events'.DS.'delete.view.php',
+                        'controller' => 'EventsController',
+                        'model' => 'Events.model',
+                        'params' => ['ID'],
+                        'permissions' => []
+                    ],
+                    [
                         'path' => '/Admin/Nyheder',
                         'layout' => 'admin',
                         'view' => 'admin'.DS.'news'.DS.'news.view.php',

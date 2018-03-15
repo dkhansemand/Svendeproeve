@@ -131,10 +131,6 @@ class Router extends Core
                                     }
                                 }
                             }
-                            else
-                            {
-                                self::$params = $URLparams;
-                            }
                         }
                     }
                 }
