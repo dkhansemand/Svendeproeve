@@ -22,6 +22,17 @@
                 </span>
                 <input type="file" multiple name="images[]" id="imageInput">
             </div>
+            <div class="progress-bar">
+                <progress max="0" value="0"></progress>
+                <span>Fil </span>
+                <span id="currentFile">0</span>
+                <span> af </span>
+                <span id="filesCount">0</span>
+                <span> uploadet </span>
+            </div>
+            <div id="uploadError">
+                <span class="err-msg"></span>
+            </div>
             <div class="file-area">
                 
             </div>
