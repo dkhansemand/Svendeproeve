@@ -47,7 +47,8 @@ img
     background-color: var(--btn-error-bg-color);
     border: 0;
     color: var(--accent-text-color);
-    padding: 10px 5px;
+    margin: 5px;
+    padding: 5px;
     text-align: center;
     text-decoration: none;
     width: fit-content;
@@ -58,7 +59,8 @@ img
     background-color: var(--btn-success-bg-color);
     border: 0;
     color: var(--accent-text-color);
-    padding: 10px 5px;
+    margin: 5px;
+    padding: 5px;
     text-decoration: none;
     text-align: center;
 }
@@ -204,7 +206,7 @@ img
     .view-table tbody tr td
     {
         height: 35px;
-        padding: 5px 0;
+        padding: 10px 0;
     }
     .view-table tbody tr:hover
     {
@@ -285,6 +287,101 @@ img
         cursor: pointer;
         font-size: 1.1em;
         justify-self: end;
+    }
+
+    #galleryView
+    {
+        background-color: var( --primary-content-bg-color);
+        margin: 10px 0 30px 0;
+        padding: 5px 10px;
+     
+    }
+
+    #galleryView h2
+    {
+        margin-bottom: 10px;
+    }
+    #galleryView form
+    {
+        display: grid;
+        grid-row-gap: 10px;
+    }
+    #galleryView form .input-field
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    #galleryView form .input-field input
+    {
+        padding: 5px;
+    }
+    #galleryView form .input-field label
+    {
+        margin-right: 10px;
+    }
+    #galleryView form button
+    {
+        cursor: pointer;
+        font-size: 1.1em;
+        justify-self: end;
+    }
+
+    #galleryView .file-area
+    {
+        -webkit-box-shadow: 0px 2px 3px 2px rgba(176,174,176,0.75);
+        box-shadow: 0px 2px 3px 2px rgba(176,174,176,0.75);
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 5px;
+        min-height: 150px;
+        width: 100%;
+    }
+
+    .gallery-grid
+    {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-column-gap: 35px;
+        grid-row-gap: 25px;
+    }
+
+    .gallery-grid .album
+    {
+        background-color: var(--primary-content-bg-color);
+        padding: 5px;
+        position: relative;
+       
+    }
+
+    .gallery-grid .album a
+    {
+        width: 100%;
+    }
+
+    .gallery-grid .album:hover
+    {
+        -webkit-box-shadow: 0px 2px 3px 2px rgba(176,174,176,0.75);
+        box-shadow: 0px 2px 3px 2px rgba(176,174,176,0.75);
+        cursor: pointer;
+    }
+
+    .gallery-grid .album .album-title
+    {
+        background-color: rgba(0,0,0,.5);
+        color: var(--accent-text-color);
+        position: absolute;
+        padding: 5px;
+        bottom: 30px;
+        left: 5px;
+        right: 5px;
+    }
+
+    .gallery-grid .album .btn-actions a
+    {
+        margin: 0px 0;
+        padding: 5px;
     }
     
 }

@@ -23,8 +23,8 @@
                     <td><?=$article->newsStartDate?></td>
                     <td><?=$article->newsEndDate?></td>
                     <td>
-                        <a href="<?=Router::Link('/Admin/Nyheder/Ret/'.$article->newsId)?>">Ret</a>
-                        <a href="<?=Router::Link('/Admin/Nyheder/Slet/'.$article->newsId)?>">Slet</a>
+                        <a href="<?=Router::Link('/Admin/Nyheder/Ret/'.$article->newsId)?>" class="btn-success">Ret</a>
+                        <a href="<?=Router::Link('/Admin/Nyheder/Slet/'.$article->newsId)?>" class="btn-error">Slet</a>
                     </td>
                 </tr>
             <?php

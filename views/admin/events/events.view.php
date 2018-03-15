@@ -23,8 +23,8 @@
                     <td><?=$event->eventStartDate?></td>
                     <td><?=$event->eventSubs ?? 0?></td>
                     <td>
-                        <a href="<?=Router::Link('/Admin/Arrangement/Ret/'.$event->eventsId)?>">Ret</a>
-                        <a href="<?=Router::Link('/Admin/Arrangement/Slet/'.$event->eventsId)?>">Slet</a>
+                        <a href="<?=Router::Link('/Admin/Arrangement/Ret/'.$event->eventsId)?>" class="btn-success">Ret</a>
+                        <a href="<?=Router::Link('/Admin/Arrangement/Slet/'.$event->eventsId)?>" class="btn-error">Slet</a>
                     </td>
                 </tr>
             <?php

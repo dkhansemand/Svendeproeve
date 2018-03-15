@@ -106,6 +106,40 @@ const ROUTES = array(
                         'permissions' => []
                     ],
                     [
+                        'path' => '/Admin/Galleri',
+                        'layout' => 'admin',
+                        'view' => 'admin'.DS.'gallery'.DS.'albums.view.php',
+                        'controller' => 'GalleryController',
+                        'model' => 'Gallery.model',
+                        'permissions' => []
+                    ],
+                    [
+                        'path' => '/Admin/Galleri/Opret',
+                        'layout' => 'admin',
+                        'view' => 'admin'.DS.'gallery'.DS.'create.view.php',
+                        'controller' => 'GalleryController',
+                        'model' => 'Gallery.model',
+                        'permissions' => []
+                    ],
+                    [
+                        'path' => '/Admin/Galleri/Ret',
+                        'layout' => 'admin',
+                        'view' => 'admin'.DS.'gallery'.DS.'edit.view.php',
+                        'controller' => 'GalleryController',
+                        'model' => 'Gallery.model',
+                        'params' => ['ID'],
+                        'permissions' => []
+                    ],
+                    [
+                        'path' => '/Admin/Galleri/Slet',
+                        'layout' => 'admin',
+                        'view' => 'admin'.DS.'gallery'.DS.'delete.view.php',
+                        'controller' => 'GalleryController',
+                        'model' => 'Gallery.model',
+                        'params' => ['ID'],
+                        'permissions' => []
+                    ],
+                    [
                         'path' => '/Admin/Nyheder',
                         'layout' => 'admin',
                         'view' => 'admin'.DS.'news'.DS.'news.view.php',
