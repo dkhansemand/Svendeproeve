@@ -1,6 +1,7 @@
 <section id="galleryView">
     <h2>Opret galleri</h2>
     <form action="" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="base" id="baseURL" value="<?=Router::$BASE?>">
             <?=Token::createTokenInput();?>
             <small>Felter med <em>* </em> skal udfyldes</small>
             <div class="input-field">
@@ -16,7 +17,10 @@
                 }
             ?>
             <div class="btn-add">
-                <button class="btn-success">Tilføj billeder</button>
+                <span id="btnAddImages" class="btn-success">
+                    Tilføj billeder
+                </span>
+                <input type="file" multiple name="images[]" id="imageInput">
             </div>
             <div class="file-area">
                 

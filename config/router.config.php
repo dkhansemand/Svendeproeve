@@ -172,5 +172,10 @@ const ROUTES = array(
                         'model' => 'news.model',
                         'params' => ['ID'],
                         'permissions' => []
+                    ],
+                    [
+                        'path' => '/api/Gallery/Upload',
+                        'layout' => 'api',
+                        'view' => 'api'.DS.'gallery.view.php'
                     ]
                 );
