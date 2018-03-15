@@ -367,6 +367,7 @@ img
     }
     #galleryView .file-area .gallery-img .btn-remove
     {
+        cursor: pointer;
         position: absolute;
         top: 0;
         right: 0;

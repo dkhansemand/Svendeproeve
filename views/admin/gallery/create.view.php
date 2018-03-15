@@ -1,7 +1,13 @@
+<?php
+
+    if(isset($POST['btnGalleryCreate']))
+    {
+        echo 'POST<pre>',var_dump($POST), ' | FILES ', var_dump($_FILES), '</pre>';
+    }
+?>
 <section id="galleryView">
     <h2>Opret galleri</h2>
     <form action="" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="base" id="baseURL" value="<?=Router::$BASE?>">
             <?=Token::createTokenInput();?>
             <small>Felter med <em>* </em> skal udfyldes</small>
             <div class="input-field">
@@ -20,7 +26,7 @@
                 <span id="btnAddImages" class="btn-success">
                     Tilføj billeder
                 </span>
-                <input type="file" multiple name="images[]" id="imageInput">
+                <input type="file" multiple name="images[]" id="imageInput" accept=".jpg,.jpeg,.png,.gif">
             </div>
             <div class="progress-bar">
                 <progress max="0" value="0"></progress>
@@ -28,7 +34,7 @@
                 <span id="currentFile">0</span>
                 <span> af </span>
                 <span id="filesCount">0</span>
-                <span> uploadet </span>
+                <span> indlæst </span>
             </div>
             <div id="uploadError">
                 <span class="err-msg"></span>
