@@ -356,6 +356,7 @@ img
         grid-column-gap: 10px;
         grid-row-gap: 5px;
         height: auto;
+        min-height: 50px;
         max-height: 400px;
         width: 100%;
         overflow-y: scroll;
@@ -365,6 +366,13 @@ img
     {
         position: relative;
     }
+
+    #galleryView .file-area .gallery-img:hover
+    {
+        cursor: pointer;
+        border: 4px solid var(--bg-accent-color);
+    }
+
     #galleryView .file-area .gallery-img .btn-remove
     {
         cursor: pointer;

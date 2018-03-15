@@ -63,10 +63,16 @@
                 }
             })
         })
-
+        let lastSelectedImage = null
         const ImageContainer = (src, id, mime) => {
             const Container = document.createElement('div')
             Container.className = 'gallery-img'
+            Container.addEventListener('click', (e) => {
+                if(lastSelectedImage !== null) { lastSelectedImage.style.border = '' }
+                e.target.parentElement.style.border = '4px solid #87ceeb'
+                document.querySelector('#albumCover').value = id
+                lastSelectedImage = e.target.parentElement
+            })
 
             const Image = document.createElement('img')
             Image.src = 'data:'+mime+';base64,'+src
