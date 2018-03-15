@@ -8,7 +8,7 @@
             <article>
                 <img src="<?=Router::$BASE?>assets/media/<?=$event->filepath . $event->filename?>" alt="<?=$event->eventTitle?>">
                 <h3><?=$event->eventTitle?></h3>
-                <p><?=date_format(date_create($event->eventStartDate), 'd. F - Y')?></p>
+                <p><?=ucwords(strftime('%d. %B - %Y', strtotime($event->eventStartDate)))?></p>
                 <p>
                     <?= htmlspecialchars_decode($event->eventDescription); ?>
                 </p>

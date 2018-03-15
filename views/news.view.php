@@ -1,12 +1,11 @@
 <?php
-    //$articles = View::CallModel()->GetAllArticlesByDate();
-    setlocale(LC_ALL, "da_DK.UTF-8", "Danish_Denmark.1252", "danish_denmark", "danish", "dk_DK@euro");
     $page = Router::GetParamByName('PAGE') ?? null;
     $currentPage = isset($page) ? $page : 1;
 ?>
 <h1>Nyheder</h1>
 <section id="newsGrid">
     <?php
+    
         Pagination::Init(View::CallModel()->GetAllArticlesByDate());
         $articles = Pagination::Items($currentPage, 5);
         foreach($articles as $article)
@@ -14,7 +13,7 @@
     ?>
             <article>
                 <h2><?=$article->newsTitle?></h2>
-                <h4><?=(new DateTime($article->newsStartDate))->format('d. F - Y')?></h4>
+                <h4><?=ucwords(strftime('%d. %B - %Y', strtotime($article->newsStartDate)))?></h4>
                 <p>
                     <?=(strlen($article->newsContent) > 200) ? substr($article->newsContent, 0, 200) . ' ...' : htmlspecialchars_decode($article->newsContent) ?>
                 </p>

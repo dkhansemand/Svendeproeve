@@ -24,8 +24,8 @@ const ROUTES = array(
                     [
                         'path' => '/Galleri',
                         'controller' => 'GalleryController',
-                        'view' => 'gallery.view.php',
-                        'params' => ['album', 'page']
+                        'model' => 'Gallery.model',
+                        'view' => 'galleries.view.php'
                     ],
                     [
                         'path' => '/Baadpark',

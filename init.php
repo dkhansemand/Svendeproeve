@@ -1,7 +1,7 @@
 <?php
     ## Localization settings, used for date/time
     
-    setlocale(LC_ALL, "danish");
+    setlocale(LC_ALL, ["da_DK.UTF-8", "Danish_Denmark.1252", "danish_denmark", "danish", "dk_DK@euro"]);
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
