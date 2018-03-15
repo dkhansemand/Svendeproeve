@@ -18,6 +18,15 @@ USE `kajakklubben`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Dumping data for table `albums`
+--
+
+LOCK TABLES `albums` WRITE;
+/*!40000 ALTER TABLE `albums` DISABLE KEYS */;
+/*!40000 ALTER TABLE `albums` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Dumping data for table `contacs`
 --
 
@@ -32,6 +41,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `events` WRITE;
 /*!40000 ALTER TABLE `events` DISABLE KEYS */;
+INSERT INTO `events` VALUES (2,'Test Arragenment','2018-03-29','&#60;p&#62;asdfghjgf&#60;/p&#62;',2),(3,'Test Arragenment 2 upload','2018-03-30','&#60;p&#62;Virker det nu igen?&#60;/p&#62;&#13;&#10;&#60;p&#62;med upload&#60;/p&#62;',6);
 /*!40000 ALTER TABLE `events` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -77,6 +87,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `media` WRITE;
 /*!40000 ALTER TABLE `media` DISABLE KEYS */;
+INSERT INTO `media` VALUES (2,'1521064925_62774473.j.jpeg','','image/jpeg'),(3,'1521105444_55077575.j.jpeg','','image/jpeg'),(6,'1521105834_66136966.j.jpeg','','image/jpeg');
 /*!40000 ALTER TABLE `media` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -169,4 +180,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-14 22:27:08
+-- Dump completed on 2018-03-15 23:04:25
