@@ -355,10 +355,21 @@ img
         grid-template-columns: repeat(4,1fr);
         grid-column-gap: 10px;
         grid-row-gap: 5px;
-        min-height: 150px;
+        height: auto;
         max-height: 400px;
         width: 100%;
         overflow-y: scroll;
+    }
+
+    #galleryView .file-area .gallery-img
+    {
+        position: relative;
+    }
+    #galleryView .file-area .gallery-img .btn-remove
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
     }
 
     .gallery-grid

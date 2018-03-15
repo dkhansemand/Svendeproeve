@@ -16,7 +16,7 @@
             progressBar.max = Files.length
             document.querySelector('#filesCount').innerText = Files.length
             Array.from(Files).forEach( (file, idx) => {
-                const formData = new FormData() 
+                /* const formData = new FormData() 
                 formData.append('test', 'tester lige fetch med post')
                 formData.append('gallery', file)
     
@@ -28,22 +28,30 @@
                     fileCurrent++
                     progressBar.value += fileCurrent
                     document.querySelector('#currentFile').innerText = fileCurrent
-                    document.querySelector('.file-area').appendChild(ImageContainer(data.filename, data.ID))
+                    document.querySelector('.file-area').appendChild(ImageContainer(data.base, data.filename, data.mime))
                     console.log('Data fra fetch :: ', data)
                 })
                 .catch( (err) => {
                     console.warn('Fejl i fetch! -> ', err)
-                })
+                }) */
+                const filereader = new FileReader()
+                filereader.readAsBinaryString(file)
+                filereader.onloadend = (data) => {
+                    //console.log('fileReader: ', btoa(data.target.result))
+                    fileCurrent++
+                    progressBar.value += fileCurrent
+                    document.querySelector('#currentFile').innerText = fileCurrent
+                    document.querySelector('.file-area').appendChild(ImageContainer(btoa(data.target.result), file.name, file.type))
+                }
             })
         })
 
-        const ImageContainer = (src, id) => {
+        const ImageContainer = (src, id, mime) => {
             const Container = document.createElement('div')
             Container.className = 'gallery-img'
-            Container.setAttribute('data-image-id', id)
 
             const Image = document.createElement('img')
-            Image.src = src
+            Image.src = 'data:'+mime+';base64,'+src
 
             const HiddenId = document.createElement('input')
             HiddenId.type = 'hidden'
@@ -52,7 +60,7 @@
 
             const RemoveBtn = document.createElement('span')
             RemoveBtn.className = 'btn-remove btn-error'
-            RemoveBtn.innerText = 'Fjern'
+            RemoveBtn.innerText = 'X'
             RemoveBtn.addEventListener('click', (e) => {
                 e.target.parentElement.remove()
             })
