@@ -23,6 +23,7 @@ USE `kajakklubben`;
 
 LOCK TABLES `albums` WRITE;
 /*!40000 ALTER TABLE `albums` DISABLE KEYS */;
+INSERT INTO `albums` VALUES (6,'test galleri2',99,NULL),(7,'Mere test',107,NULL);
 /*!40000 ALTER TABLE `albums` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -60,6 +61,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `gallery` WRITE;
 /*!40000 ALTER TABLE `gallery` DISABLE KEYS */;
+INSERT INTO `gallery` VALUES (17,96,6),(18,97,6),(19,98,6),(20,99,6),(21,100,6),(22,101,6),(23,102,6),(24,103,6),(25,104,6),(26,105,6),(27,106,7),(28,107,7),(29,108,7),(30,109,7),(31,110,7),(32,111,7),(33,112,7),(34,113,7),(35,114,7),(36,115,7);
 /*!40000 ALTER TABLE `gallery` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -87,7 +89,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `media` WRITE;
 /*!40000 ALTER TABLE `media` DISABLE KEYS */;
-INSERT INTO `media` VALUES (2,'1521064925_62774473.j.jpeg','','image/jpeg'),(3,'1521105444_55077575.j.jpeg','','image/jpeg'),(6,'1521105834_66136966.j.jpeg','','image/jpeg');
+INSERT INTO `media` VALUES (2,'1521064925_62774473.j.jpeg','','image/jpeg'),(3,'1521105444_55077575.j.jpeg','','image/jpeg'),(6,'1521105834_66136966.j.jpeg','','image/jpeg'),(96,'1200x800_1521189020_0516fd37a208ad06f4213a3eab1b8cb962a80146d2e205754.jpeg','test-galleri','image/jpeg'),(97,'200x150_1521189020_0516fd37a208ad06f4213a3eab1b8cb962a80146d2e205754.jpeg','test-galleri','image/jpeg'),(98,'1200x800_1521189021_71eb97d6860263b45f9368a96a92d6a3429665eabe7d7585e.jpeg','test-galleri','image/jpeg'),(99,'200x150_1521189021_71eb97d6860263b45f9368a96a92d6a3429665eabe7d7585e.jpeg','test-galleri','image/jpeg'),(100,'1200x800_1521189021_be71abc2a9fb13be16b80704c117d381a3b302f9454752092.jpeg','test-galleri','image/jpeg'),(101,'200x150_1521189021_be71abc2a9fb13be16b80704c117d381a3b302f9454752092.jpeg','test-galleri','image/jpeg'),(102,'1200x800_1521189022_71577e6785a0a993ffb343e66329ce9f1d9237591ab76dced.jpeg','test-galleri','image/jpeg'),(103,'200x150_1521189022_71577e6785a0a993ffb343e66329ce9f1d9237591ab76dced.jpeg','test-galleri','image/jpeg'),(104,'1200x800_1521189023_32cd88b51e283efc5a6c30b561c7792f27c742d529ccf0788.jpeg','test-galleri','image/jpeg'),(105,'200x150_1521189023_32cd88b51e283efc5a6c30b561c7792f27c742d529ccf0788.jpeg','test-galleri','image/jpeg'),(106,'1200x800_1521189086_c1d8d105c5189e5ef276164f28ccaa1b5550cafe36b652b19.jpeg','Mere-test','image/jpeg'),(107,'200x150_1521189086_c1d8d105c5189e5ef276164f28ccaa1b5550cafe36b652b19.jpeg','Mere-test','image/jpeg'),(108,'1200x800_1521189088_eeccc3d129c6706ab3dfbf6dfb8c40f00ef6caac22d22be71.jpeg','Mere-test','image/jpeg'),(109,'200x150_1521189088_eeccc3d129c6706ab3dfbf6dfb8c40f00ef6caac22d22be71.jpeg','Mere-test','image/jpeg'),(110,'1200x800_1521189088_80a24ca9a246c4bdeee608fd1de59a8593516a558552c31db.jpeg','Mere-test','image/jpeg'),(111,'200x150_1521189088_80a24ca9a246c4bdeee608fd1de59a8593516a558552c31db.jpeg','Mere-test','image/jpeg'),(112,'1200x800_1521189089_3e974945c5a070d810d7c701b69153f47dea83e8c9606ae09.jpeg','Mere-test','image/jpeg'),(113,'200x150_1521189089_3e974945c5a070d810d7c701b69153f47dea83e8c9606ae09.jpeg','Mere-test','image/jpeg'),(114,'1200x800_1521189089_20ab5d31f8251c962e6a0b25befce607eac106b79cc85a6bb.jpeg','Mere-test','image/jpeg'),(115,'200x150_1521189089_20ab5d31f8251c962e6a0b25befce607eac106b79cc85a6bb.jpeg','Mere-test','image/jpeg'),(116,'1200x800_1521238560_bbb2eb260d4feaceaae8997a5420a1d20dca154bfbe9a5939.jpeg','test-galleri2','image/jpeg'),(117,'200x150_1521238560_bbb2eb260d4feaceaae8997a5420a1d20dca154bfbe9a5939.jpeg','test-galleri2','image/jpeg'),(118,'1200x800_1521238583_bbb2eb260d4feaceaae8997a5420a1d20dca154bfbe9a5939.jpeg','test-galleri2','image/jpeg'),(119,'200x150_1521238583_bbb2eb260d4feaceaae8997a5420a1d20dca154bfbe9a5939.jpeg','test-galleri2','image/jpeg'),(120,'1200x800_1521238698_c1d8d105c5189e5ef276164f28ccaa1b5550cafe36b652b19.jpeg','test-galleri2','image/jpeg'),(121,'200x150_1521238698_c1d8d105c5189e5ef276164f28ccaa1b5550cafe36b652b19.jpeg','test-galleri2','image/jpeg'),(122,'1200x800_1521239030_bbb2eb260d4feaceaae8997a5420a1d20dca154bfbe9a5939.jpeg','test-galleri2','image/jpeg'),(123,'200x150_1521239030_bbb2eb260d4feaceaae8997a5420a1d20dca154bfbe9a5939.jpeg','test-galleri2','image/jpeg');
 /*!40000 ALTER TABLE `media` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,4 +182,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-15 23:04:25
+-- Dump completed on 2018-03-16 23:31:53

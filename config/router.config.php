@@ -181,8 +181,9 @@ const ROUTES = array(
                         'permissions' => []
                     ],
                     [
-                        'path' => '/api/Gallery/Upload',
+                        'path' => '/api/Gallery/Delete',
                         'layout' => 'api',
-                        'view' => 'api'.DS.'gallery.view.php'
+                        'view' => 'api'.DS.'gallery.view.php',
+                        'model' => 'Gallery.model'
                     ]
                 );

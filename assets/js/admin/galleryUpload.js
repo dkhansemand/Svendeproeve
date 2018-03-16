@@ -4,13 +4,12 @@
             e.preventDefault()
             document.getElementById('imageInput').click()
         })
-
         document.getElementById('imageInput').addEventListener('change', (e) => {
-            //console.log('Input files: ', e.srcElement.files)
             document.querySelector('#uploadError').style.display = 'none'
             document.querySelector('#uploadError .err-msg').innerText = ''
             document.querySelector('.progress-bar').style.display = 'block'
             document.querySelector('#currentFile').innerText = '0'
+
             const progressBar = document.querySelector('.progress-bar progress')
             const Files = e.srcElement.files
             let filesCount = 0
@@ -21,24 +20,6 @@
             const AllowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif']
 
             Array.from(Files).forEach( (file, idx) => {
-                /* const formData = new FormData() 
-                formData.append('test', 'tester lige fetch med post')
-                formData.append('gallery', file)
-    
-                fetch(baseURL + 'api/Gallery/Upload', { method: 'POST', body: formData})
-                .then( (res) => {
-                    return res.json()
-                })
-                .then( (data) => {
-                    fileCurrent++
-                    progressBar.value += fileCurrent
-                    document.querySelector('#currentFile').innerText = fileCurrent
-                    document.querySelector('.file-area').appendChild(ImageContainer(data.base, data.filename, data.mime))
-                    console.log('Data fra fetch :: ', data)
-                })
-                .catch( (err) => {
-                    console.warn('Fejl i fetch! -> ', err)
-                }) */
                 let foundAllowedType = false
                 AllowedTypes.find( (type) => {
                     if(file.type === type)
@@ -54,7 +35,6 @@
                         }
                     }
                 })
-
                 if(!foundAllowedType)
                 {
                     document.querySelector('#uploadError .err-msg').innerText = ''
@@ -69,7 +49,7 @@
             Container.className = 'gallery-img'
             Container.addEventListener('click', (e) => {
                 if(lastSelectedImage !== null) { lastSelectedImage.style.border = '' }
-                e.target.parentElement.style.border = '4px solid #87ceeb'
+                e.target.parentElement.style.border = '4px solid darkgreen'
                 document.querySelector('#albumCover').value = id
                 lastSelectedImage = e.target.parentElement
             })
@@ -95,5 +75,44 @@
             return Container
         }
 
+        const galleryContainer = document.querySelectorAll('.gallery-img')
+        if(galleryContainer.length > 0)
+        {
+            galleryContainer.forEach( (elm, idx) => {
+                lastSelectedImage = elm
+                elm.addEventListener('click', (e) => {
+                    if(lastSelectedImage !== null) { lastSelectedImage.style.border = '' }
+                    e.target.parentElement.style.border = '4px solid darkgreen'
+                   document.querySelector('#albumCover').value = elm.querySelector('input[type=hidden]').value
+                   //console.log('parent', elm)
+                    lastSelectedImage = e.target.parentElement
+                })
+            })
+            document.querySelectorAll('.gallery-img .btn-remove').forEach( (elm) => {
+                elm.addEventListener('click', (e) => {
+                    console.log('Element', e.target.previousElementSibling.value)
+                    
+                    const baseURL = document.getElementById('baseURL').value
+                    const formData = new FormData() 
+                    formData.append('mediaId', e.target.previousElementSibling.value)
+
+                    fetch(baseURL + 'api/Gallery/Delete', { method: 'POST', body: formData})
+                    .then( (res) => {
+                        return res.json()
+                    })
+                    .then( (data) => {
+                        console.log('Data fra fetch :: ', data)
+                        if(!data.err)
+                        {
+                            e.target.parentElement.remove()
+                        }
+                    })
+                    .catch( (err) => {
+                        console.warn('Fejl i fetch! -> ', err)
+                    })
+                })
+            })
+        }
+        
     })
 })()

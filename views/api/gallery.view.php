@@ -1,10 +1,29 @@
 <?php
-//sleep(1);
-if(!empty($_FILES['gallery']['name']))
+
+if(!empty($POST))
 {
-    $fileContent = file_get_contents($_FILES['gallery']['tmp_name']);
-    $base64 = base64_encode($fileContent);
-    echo json_encode(['err' => false, 'base' => $base64, 'filename' => $_FILES['gallery']['name'], 'mime' => $_FILES['gallery']['type'], 'ID' => microtime()]);
+    if(!empty($POST['mediaId']) && is_numeric($POST['mediaId']))
+    {
+        $path = __ROOT__ . DS . 'assets' . DS . 'media' . DS;
+        $mediaInfo = View::CallModel()->GetMediaInfoById($POST['mediaId']);
+        $filenameSplit = explode('_', $mediaInfo->filename);
+        $fullsize = View::CallModel()->GetMediaInfoByFilename($filenameSplit[2]);
+        if(unlink($path.$mediaInfo->filepath.DS.$mediaInfo->filename) && unlink($path.$fullsize->filepath.DS.$fullsize->filename) )
+        {
+            if(View::CallModel()->DeleteMediaId($mediaInfo->mediaId) && View::CallModel()->DeleteMediaId($fullsize->mediaId))
+            {
+                echo json_encode(['err' => false, 'media' => $fullsize]);
+            }
+        }
+        else
+        {
+            echo json_encode(['err' => true, 'msg' => 'Kunne ikke slette billede [SQL-fejl]' . $POST['mediaId']]);
+        }
+    }
+    else
+    {
+        echo json_encode(['err' => true, 'msg' => 'Kunne ikke slette billede ' . $POST['mediaId']]);
+    }
 }else{
     echo json_encode(['err' => true, 'msg' => 'Fejl filer blev ikke modtaget.']);
 }
