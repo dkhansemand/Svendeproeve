@@ -38,4 +38,13 @@ class GalleryModel extends Model
                                     LEFT JOIN `events` ON `albumEventId` = `eventsId`
                                     INNER JOIN `media` ON `albumCoverId` = `mediaId`;")->fetchAll();
     }
+
+    public function GetGalleryByAlbumId(int $ID) : array
+    {
+        return $this->query("SELECT `albumId`, `albumName`, `eventTitle`, `mediaId`, `filepath`, `filename` FROM `gallery`
+                                    INNER JOIN `albums` ON `fkAlbumId` = `albumId`
+                                    LEFT JOIN `events` ON `albumEventId` = `eventsId`
+                                    INNER JOIN `media` ON `fkGalleryMediaId` = `mediaId`
+                                    WHERE `fkAlbumId` = :ID;", [':ID' => $ID])->fetchAll();
+    }
 }

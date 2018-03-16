@@ -28,6 +28,13 @@ const ROUTES = array(
                         'view' => 'galleries.view.php'
                     ],
                     [
+                        'path' => '/Galleri/Album',
+                        'controller' => 'GalleryController',
+                        'model' => 'Gallery.model',
+                        'view' => 'gallery.view.php',
+                        'params' => ['ALBUM_ID']
+                    ],
+                    [
                         'path' => '/Baadpark',
                         'controller' => 'ProductsController',
                         'view' => 'products.view.php'

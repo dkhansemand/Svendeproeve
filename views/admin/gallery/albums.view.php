@@ -12,8 +12,8 @@
                     <span class="album-title"><?= empty($album->eventTitle) ? $album->albumName : $album->eventTitle ?></span>
                 </a>
                 <span class="btn-actions">
-                    <a href="<?=Router::Link('/Galleri/Album/Ret/'.$album->albumId)?>" class="btn-success">Ret</a>
-                    <a href="<?=Router::Link('/Galleri/Album/Slet/'.$album->albumId)?>" class="btn-error">Slet</a>
+                    <a href="<?=Router::Link('/Admin/Galleri/Ret/'.$album->albumId)?>" class="btn-success">Ret</a>
+                    <a href="<?=Router::Link('/Admin/Galleri/Slet/'.$album->albumId)?>" class="btn-error">Slet</a>
                 </span>
             </div>
     <?php
