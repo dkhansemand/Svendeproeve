@@ -22,6 +22,7 @@ class GalleryModel extends Model
                                                     ':CID' => $albumCover,
                                                     ':EID' => $event
                                                 ]);
+
         $albumId = $this->query("SELECT `albumId` FROM `albums` WHERE `albumCoverId` = :CID;", [':CID' => $albumCover])->fetch()->albumId;
 
         foreach($images as $mediaId)
@@ -29,5 +30,12 @@ class GalleryModel extends Model
             $this->query("INSERT INTO `gallery` SET `fkGalleryMediaId` = :MID, `fkAlbumId` = :AID;", [':MID' => $mediaId, ':AID' => $albumId]);
         }
         return true;
+    }
+
+    public function GetAlbums() : array
+    {
+        return $this->query("SELECT `albumId`, `albumName`, `eventTitle`, `filepath`, `filename` FROM `albums`
+                                    LEFT JOIN `events` ON `albumEventId` = `eventsId`
+                                    INNER JOIN `media` ON `albumCoverId` = `mediaId`;")->fetchAll();
     }
 }
