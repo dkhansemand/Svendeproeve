@@ -282,9 +282,11 @@ img
 
     #galleriesView
     {
+        background-color: var(--primary-content-bg-color);
         display: grid;
         grid-row-gap: 15px;
         margin-bottom: 50px;
+        margin-top: 15px;
     }
 
     .gallery-grid

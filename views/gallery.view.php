@@ -69,7 +69,7 @@
     }
 
 ?>
-<section id="gallariesView">
+<section id="galleriesView">
     <h2>Galleri - <?= empty($galleryData[0]->eventTitle) ? $galleryData[0]->albumName : $galleryData[0]->eventTitle ?></h2>
     <div class="gallery-grid">
     <?php
