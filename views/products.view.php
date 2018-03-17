@@ -50,7 +50,4 @@
     <?php
         }
     ?>
-    <?php
-        echo '<pre>',var_dump($types),'</pre>';
-    ?>
 </section>
