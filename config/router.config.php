@@ -16,6 +16,13 @@ const ROUTES = array(
                         'view' => 'news.view.php'
                     ],
                     [
+                        'path' => '/Nyhed',
+                        'controller' => 'NewsController',
+                        'model' => 'news.model',
+                        'params' => ['ARTICLE'],
+                        'view' => 'article.view.php'
+                    ],
+                    [
                         'path' => '/Arrangementer',
                         'controller' => 'EventsController',
                         'model' => 'Events.model',

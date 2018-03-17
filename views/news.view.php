@@ -17,7 +17,7 @@
                 <p>
                     <?=(strlen($article->newsContent) > 200) ? substr($article->newsContent, 0, 200) . ' ...' : htmlspecialchars_decode($article->newsContent) ?>
                 </p>
-                <a href="">Læs mere...</a>
+                <a href="<?=Router::Link('/Nyhed/'.str_replace(' ', '-', $article->newsTitle).'-'.$article->newsId)?>">Læs mere...</a>
             </article>
     <?php
         }
