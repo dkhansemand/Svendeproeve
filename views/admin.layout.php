@@ -34,9 +34,9 @@
                         class="<?=Router::IsActive('/Admin/Baadpark', 'active')?>">
                         Bådpark
                     </a>
-                    <a href="<?=Router::Link('/Admin/Baadtyper')?>" 
-                        class="<?=Router::IsActive('/Admin/Baadtyper', 'active')?>">
-                        Bådtyper
+                    <a href="<?=Router::Link('/Admin/kajaktyper')?>" 
+                        class="<?=Router::IsActive('/Admin/kajaktyper', 'active')?>">
+                        Kajaktyper
                     </a>
                     <a href="<?=Router::Link('/Admin/Medlemmer')?>" 
                         class="<?=Router::IsActive('/Admin/Medlemmer', 'active')?>">

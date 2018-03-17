@@ -31,9 +31,9 @@ class ProductModel extends Model
 
     public function EditType(string $typeName, int $typeLevel, int $ID)
     {
-        $existingType = $this->query("SELECT `kajakTypeId` FROM `kajakTypes` WHERE `kajakTypeName` = LOWER(:TNAME)", [':TNAME' => $typeName]);
+        $existingType = $this->query("SELECT `kajakTypeId` FROM `kajakTypes` WHERE `kajakTypeId` = :ID", [':ID' => $ID]);
 
-        if($existingType->rowCount() === 0)
+        if($existingType->rowCount() === 1)
         {
             return $this->query("UPDATE `kajakTypes` SET `kajakTypeName` = :TNAME, `kajakTypeLevel` = :TLEVEL WHERE `kajakTypeId` = :ID;", [':TNAME' => $typeName, ':TLEVEL' => $typeLevel, ':ID' => $ID]);
         }

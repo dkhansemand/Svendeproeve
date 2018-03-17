@@ -197,7 +197,7 @@ const ROUTES = array(
                         'permissions' => []
                     ],
                     [
-                        'path' => '/Admin/Baadtyper',
+                        'path' => '/Admin/Kajaktyper',
                         'layout' => 'admin',
                         'view' => 'admin'.DS.'productTypes'.DS.'productTypes.view.php',
                         'controller' => 'ProductsController',
@@ -205,7 +205,7 @@ const ROUTES = array(
                         'permissions' => []
                     ],
                     [
-                        'path' => '/Admin/Baadtyper/Opret',
+                        'path' => '/Admin/Kajaktype/Opret',
                         'layout' => 'admin',
                         'view' => 'admin'.DS.'productTypes'.DS.'create.view.php',
                         'controller' => 'ProductsController',
@@ -213,7 +213,7 @@ const ROUTES = array(
                         'permissions' => []
                     ],
                     [
-                        'path' => '/Admin/Baadtype/Ret',
+                        'path' => '/Admin/Kajaktype/Ret',
                         'layout' => 'admin',
                         'view' => 'admin'.DS.'productTypes'.DS.'edit.view.php',
                         'controller' => 'ProductsController',
@@ -222,7 +222,7 @@ const ROUTES = array(
                         'permissions' => []
                     ],
                     [
-                        'path' => '/Admin/Baadtype/Slet',
+                        'path' => '/Admin/Kajaktype/Slet',
                         'layout' => 'admin',
                         'view' => 'admin'.DS.'productTypes'.DS.'delete.view.php',
                         'controller' => 'ProductsController',

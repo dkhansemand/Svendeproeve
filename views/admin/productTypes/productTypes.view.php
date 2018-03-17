@@ -1,6 +1,6 @@
 <section id="news">
-    <h2>BådTyper</h2>
-    <a href="<?=Router::Link('/Admin/Baadtyper/Opret')?>" class="btn-accent">Opret ny type</a>
+    <h2>Kajaktyper</h2>
+    <a href="<?=Router::Link('/Admin/Kajaktype/Opret')?>" class="btn-accent">Opret ny type</a>
     <table class="view-table">
         <thead>
             <tr>
@@ -21,8 +21,8 @@
                     <td><?=$type->kajakTypeName?></td>
                     <td><?=$type->kajakTypeLevel?></td>
                     <td>
-                        <a href="<?=Router::Link('/Admin/Baadtype/Ret/'.$type->kajakTypeId)?>" class="btn-success">Ret</a>
-                        <a href="<?=Router::Link('/Admin/Baadtype/Slet/'.$type->kajakTypeId)?>" class="btn-error">Slet</a>
+                        <a href="<?=Router::Link('/Admin/Kajaktype/Ret/'.$type->kajakTypeId)?>" class="btn-success">Ret</a>
+                        <a href="<?=Router::Link('/Admin/Kajaktype/Slet/'.$type->kajakTypeId)?>" class="btn-error">Slet</a>
                     </td>
                 </tr>
             <?php
