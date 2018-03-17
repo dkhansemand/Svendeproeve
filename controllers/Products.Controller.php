@@ -112,7 +112,7 @@ class ProductsController extends Core
             
             if(!empty($productData['productPrice']))
             {
-                $salesPrice = is_numeric($productData['productPrice']) ? $productData['productPrice'] : $error['productPrice'] = 'prisen er ikke angiver i korrekt format.';
+                $salesPrice = is_numeric($productData['productPrice']) ? (int)$productData['productPrice'] : $error['productPrice'] = 'prisen er ikke angiver i korrekt format.';
             }
 
             if(sizeof($error) === 0)

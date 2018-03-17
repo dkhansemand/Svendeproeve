@@ -41,7 +41,7 @@
                     <span class="th-4-mobile"></span>
                     <span><img src="<?=$product['image']?>" alt="?=$product['name']?>"></span>
                     <span class="th-5-mobile">Til salg:</span>
-                    <span><?=number_format($product['sale'], 0)?></span>
+                    <span><?=!is_null($product['sale']) ? number_format($product['sale'], 0, ',', '.') . ' DKK' : '' ?></span>
                 </div>
     <?php
             }
@@ -51,6 +51,6 @@
         }
     ?>
     <?php
-       // echo '<pre>',var_dump($types),'</pre>';
+        echo '<pre>',var_dump($types),'</pre>';
     ?>
 </section>

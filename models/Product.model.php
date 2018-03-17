@@ -90,7 +90,12 @@ class ProductModel extends Model
     {
         if(is_numeric($salesPrice))
         {
-            $this->query("UPDATE `sales` SET `salesPrice` = :PRICE WHERE `salesKajakId` = :PID;", [':PID' => $ID, ':PRICE' => $salesPrice]);
+            if($this->query("SELECT `salesId` FROM `sales` WHERE `salesKajakId` = :PID;", [':PID' => $ID])->rowCount() === 1)
+            {
+                $this->query("UPDATE `sales` SET `salesPrice` = :PRICE WHERE `salesKajakId` = :PID;", [':PID' => $ID, ':PRICE' => $salesPrice]);
+            }else{
+                $this->query("INSERT INTO `sales` SET `salesKajakId` = :PID, `salesPrice` = :PRICE;", [':PID' => $ID, ':PRICE' => $salesPrice]);
+            }
         }
         
         if(is_null($image))

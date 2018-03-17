@@ -27,7 +27,7 @@
                     <td><?=$product->kajakTypeLevel?></td>
                     <td><?=$product->kajakStock?></td>
                     <td><img src="<?=Router::$BASE?>assets/media/<?=$product->filepath.'/'.$product->filename?>" alt=""></td>
-                    <td><?= !empty($product->salesPrice) ? $product->salesPrice : 'Ikke til salg'?></td>
+                    <td><?= !is_null($product->salesPrice) ? number_format($product->salesPrice, 0, ',', '.') . ' DKK' : ''?></td>
                     <td>
                         <a href="<?=Router::Link('/Admin/Baadpark/Ret/'.$product->kajakId)?>" class="btn-success">Ret</a>
                         <a href="<?=Router::Link('/Admin/Baadpark/Slet/'.$product->kajakId)?>" class="btn-error">Slet</a>
