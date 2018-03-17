@@ -137,7 +137,8 @@ class ProductModel extends Model
                                 FROM `kajaks`
                                 LEFT JOIN `sales` ON `salesKajakId` = `kajakId`
                                 INNER JOIN `kajaktypes` ON `kajakTypeId` = `fkKajakType`
-                                INNER JOIN `media` ON `mediaId` = `fkKajakMedia`")->fetchAll();
+                                INNER JOIN `media` ON `mediaId` = `fkKajakMedia`
+                                ORDER BY `kajakTypeName` ASC")->fetchAll();
     }
 
     public function GetProductById(int $ID)

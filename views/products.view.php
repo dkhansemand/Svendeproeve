@@ -8,25 +8,49 @@
         <div class="th-5">TIl salg:</div>
     </div>
     <?php
+        $types = [];
         foreach(View::CallModel()->GetAllProducts() as $product)
+        {
+            
+                $types[$product->kajakTypeName][] = [
+                    'name' => $product->kajakName,
+                    'level' => $product->kajakTypeLevel,
+                    'stock' => $product->kajakStock,
+                    'image' => Router::$BASE.'assets/media/'. $product->filename,
+                    'sale' => $product->salesPrice
+                ];
+            
+        }
+
+        foreach($types as $typeName => $products)
         {
     ?>
             <div class="product-row">
-                <h3><?=$product->kajakTypeName?></h3>
+                <h3><?=$typeName?></h3>
+    <?php
+            foreach($products as $product)
+            {
+    ?>
                 <div class="product-info">
-                    <span>produktnavn</span>
+                    <span><?=$product['name']?></span>
                     <span class="th-1-mobile"></span>
                     <span class="th-2-mobile">Sværhedsgrad:</span>
-                    <span>11</span>
+                    <span><?=$product['level']?></span>
                     <span class="th-3-mobile">Antal:</span>
-                    <span>antal</span>
+                    <span><?=$product['stock']?></span>
                     <span class="th-4-mobile"></span>
-                    <span><img src="//placehold.it/200x150" alt=""></span>
+                    <span><img src="<?=$product['image']?>" alt="?=$product['name']?>"></span>
                     <span class="th-5-mobile">Til salg:</span>
-                    <span>1.500 DKK</span>
+                    <span><?=number_format($product['sale'], 0)?></span>
                 </div>
+    <?php
+            }
+    ?>
             </div>
     <?php
         }
+    ?>
+    <?php
+       // echo '<pre>',var_dump($types),'</pre>';
     ?>
 </section>

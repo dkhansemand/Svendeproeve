@@ -1,6 +1,6 @@
 <section id="news">
     <h2>Bådpark</h2>
-    <a href="<?=Router::Link('/Admin/Baadpark/Opret')?>" class="btn-accent">Opret ny båd</a>
+    <a href="<?=Router::Link('/Admin/Baadpark/Opret')?>" class="btn-accent">Opret ny kajak</a>
     <table class="view-table">
         <thead>
             <tr>
