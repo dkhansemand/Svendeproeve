@@ -15,22 +15,22 @@
         </thead>
         <tbody>
         <?php
-            $articles = View::CallModel()->GetAllArticles();
-            if(sizeof($articles) > 0)
+            $products = View::CallModel()->GetAllProducts();
+            if(sizeof($products) > 0)
             {
-                foreach($articles as $article)
+                foreach($products as $product)
                 {    
             ?>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?=$product->kajakName?></td>
+                    <td><?=$product->kajakTypeName?></td>
+                    <td><?=$product->kajakTypeLevel?></td>
+                    <td><?=$product->kajakStock?></td>
+                    <td><img src="<?=Router::$BASE?>assets/media/<?=$product->filepath.'/'.$product->filename?>" alt=""></td>
+                    <td><?= !empty($product->salesPrice) ? $product->salesPrice : 'Ikke til salg'?></td>
                     <td>
-                        <a href="<?=Router::Link('/Admin/Nyheder/Ret/'.$article->newsId)?>" class="btn-success">Ret</a>
-                        <a href="<?=Router::Link('/Admin/Nyheder/Slet/'.$article->newsId)?>" class="btn-error">Slet</a>
+                        <a href="<?=Router::Link('/Admin/Baadpark/Ret/'.$product->kajakId)?>" class="btn-success">Ret</a>
+                        <a href="<?=Router::Link('/Admin/Baadpark/Slet/'.$product->kajakId)?>" class="btn-error">Slet</a>
                     </td>
                 </tr>
             <?php

@@ -197,6 +197,32 @@ const ROUTES = array(
                         'permissions' => []
                     ],
                     [
+                        'path' => '/Admin/Baadpark/Opret',
+                        'layout' => 'admin',
+                        'view' => 'admin'.DS.'products'.DS.'create.view.php',
+                        'controller' => 'ProductsController',
+                        'model' => 'Product.model',
+                        'permissions' => []
+                    ],
+                    [
+                        'path' => '/Admin/Baadpark/Ret',
+                        'layout' => 'admin',
+                        'view' => 'admin'.DS.'products'.DS.'edit.view.php',
+                        'controller' => 'ProductsController',
+                        'model' => 'Product.model',
+                        'params' => ['ID'],
+                        'permissions' => []
+                    ],
+                    [
+                        'path' => '/Admin/Baadpark/Slet',
+                        'layout' => 'admin',
+                        'view' => 'admin'.DS.'products'.DS.'delete.view.php',
+                        'controller' => 'ProductsController',
+                        'model' => 'Product.model',
+                        'params' => ['ID'],
+                        'permissions' => []
+                    ],
+                    [
                         'path' => '/Admin/Kajaktyper',
                         'layout' => 'admin',
                         'view' => 'admin'.DS.'productTypes'.DS.'productTypes.view.php',
