@@ -98,7 +98,7 @@
         <?php
         }else{
         ?>
-            <h3>Der valgte galleri har ikke bogle billeder..</h3>
+            <h3>Der valgte galleri har ikke bogle billeder.</h3>
         <?php
         }
     ?>
