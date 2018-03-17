@@ -335,6 +335,52 @@ img
         display: flex;
         justify-content: space-between;
     }
+
+    #productsView
+    {
+        background-color: var(--primary-content-bg-color);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 5px;
+        margin: 15px 0 50px 0;
+        padding: 20px;
+        width: 100%;
+    }
+
+    #productsView .product-header
+    {
+        
+        display: grid;
+        grid-template-columns: 5fr 2fr 1fr 2fr 2fr;
+        grid-column-gap: 5px;
+        margin-bottom: 10px;
+    }
+
+    #productsView .product-row
+    {
+       
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 5px;
+    }
+
+    #productsView .product-row .product-info
+    {
+        
+        display: grid;
+        grid-template-columns: 5fr 2fr 1fr 2fr 2fr;
+        grid-column-gap: 5px;
+        align-items: center;
+    }
+
+    #productsView .th-1-mobile,
+    #productsView .th-2-mobile,
+    #productsView .th-3-mobile,
+    #productsView .th-4-mobile,
+    #productsView .th-5-mobile
+    {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 960px) {
@@ -411,7 +457,7 @@ img
 @media screen and (max-width: 562px) {
     .grid header
     {
-        background-position-y: -80px;
+        background-position-y: initial;
     }
     .grid header #topHeader h1
     {
@@ -423,5 +469,48 @@ img
     {
         grid-template-columns: repeat(2,1fr);
         padding: 10px 15px;
+    }
+
+
+    #productsView .product-header
+    {
+        
+        display: grid;
+        grid-template-columns: 5fr 2fr 1fr 2fr 2fr;
+        grid-column-gap: 5px;
+        margin-bottom: 10px;
+    }
+
+    #productsView .th-1,
+    #productsView .th-2,
+    #productsView .th-3,
+    #productsView .th-4,
+    #productsView .th-5
+    {
+        display: none;
+    }
+    #productsView .th-1-mobile,
+    #productsView .th-2-mobile,
+    #productsView .th-3-mobile,
+    #productsView .th-4-mobile,
+    #productsView .th-5-mobile
+    {
+        display: initial;
+    }
+    #productsView .product-row
+    {
+       
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 5px;
+    }
+
+    #productsView .product-row .product-info
+    {
+        
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 5px;
+        align-items: center;
     }
 }

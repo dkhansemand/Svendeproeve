@@ -21,7 +21,7 @@
                     <a href="<?=Router::Link('/Nyheder')?>" class="<?=Router::IsActive('/Nyheder', 'active')?>">Nyheder</a>
                     <a href="<?=Router::Link('/Arrangementer')?>" class="<?=Router::IsActive('/Arrangementer', 'active')?>">Arrangementer</a>
                     <a href="<?=Router::Link('/Galleri')?>" class="<?=Router::IsActive('/Galleri', 'active')?>">Galleri</a>
-                    <a href="">Bådpark</a>
+                    <a href="<?=Router::Link('/Baadpark')?>" class="<?=Router::IsActive('/Baadpark', 'active')?>">Bådpark</a>
                     <a href="<?=Router::Link('/Bliv-Medlem')?>" class="<?=Router::IsActive('/Bliv-Medlem', 'active')?>">Bliv Medlem</a>
                     <a href="<?=Router::Link('/Min-Side')?>" class="<?=Router::IsActive('/Min-Side', 'active')?>">Min Side</a>
                     <a href="">Kontakt</a>
