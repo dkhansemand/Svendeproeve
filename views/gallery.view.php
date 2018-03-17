@@ -57,36 +57,51 @@
 <?php
     $albumId = (int)Router::GetParamByName('ALBUM_ID');
     $galleryData = View::CallModel()->GetGalleryByAlbumId($albumId);
-    $filepath = $galleryData[0]->filepath;
-    $fullSize = [];
-    $thumbnails = [];
 
-    foreach($galleryData as $image)
+    if(sizeof($galleryData) > 0)
     {
-        $filenameSplit = explode('_', $image->filename);
-        $thumbnails[] = (in_array('200x150', $filenameSplit)) ? $image->filename : null;
-        $fullSize[] = (in_array('1200x800', $filenameSplit)) ? $image->filename : null;
+        $filepath = $galleryData[0]->filepath;
+        $fullSize = [];
+        $thumbnails = [];
+    
+        foreach($galleryData as $image)
+        {
+            $filenameSplit = explode('_', $image->filename);
+            $thumbnails[] = (in_array('200x150', $filenameSplit)) ? $image->filename : null;
+            $fullSize[] = (in_array('1200x800', $filenameSplit)) ? $image->filename : null;
+        }
+
     }
 
 ?>
 <section id="galleriesView">
-    <h2>Galleri - <?= empty($galleryData[0]->eventTitle) ? $galleryData[0]->albumName : $galleryData[0]->eventTitle ?></h2>
-    <div class="gallery-grid">
+    <h2>Galleri - <?php if(isset($galleryData[0])){ echo (empty($galleryData[0]->eventTitle) ? $galleryData[0]->albumName : $galleryData[0]->eventTitle); }?></h2>
     <?php
-        
-        foreach($thumbnails as $idx => $thumbnail)
+        if(sizeof($galleryData) > 0)
         {
-            if(!is_null($thumbnail))
-            {
     ?>
-            <div class="album">
-                <img src="<?=Router::$BASE?>assets/media/<?=$filepath.'/'.$thumbnail?>" data-fullsize="<?=Router::$BASE?>assets/media/<?=$filepath.'/'.$fullSize[$idx-1] ?>" alt="<?= empty($galleryData[0]->eventTitle) ? $galleryData[0]->albumName : $galleryData[0]->eventTitle ?>">
-            </div>
+        <div class="gallery-grid">
     <?php
+            foreach($thumbnails as $idx => $thumbnail)
+            {
+                if(!is_null($thumbnail))
+                {
+        ?>
+                <div class="album">
+                    <img src="<?=Router::$BASE?>assets/media/<?=$filepath.'/'.$thumbnail?>" data-fullsize="<?=Router::$BASE?>assets/media/<?=$filepath.'/'.$fullSize[$idx-1] ?>" alt="<?= empty($galleryData[0]->eventTitle) ? $galleryData[0]->albumName : $galleryData[0]->eventTitle ?>">
+                </div>
+        <?php
+                }
             }
+        ?>
+        </div>
+        <?php
+        }else{
+        ?>
+            <h3>Der valgte galleri har ikke bogle billeder..</h3>
+        <?php
         }
     ?>
-    </div>
     <div id="myModal" class="modal">
         <span class="close cursor">&times;</span>
         <div class="modal-content">

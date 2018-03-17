@@ -105,4 +105,24 @@ class GalleryController extends Core
         }
         return ['err' => true, 'function' => ' data blev ikke modtaget til server. Prøv igen ved at klikke på "Opret"'];
     }
+
+    public function DeleteGallery(int $ID)
+    {
+        $path = __ROOT__ . DS . 'assets' . DS . 'media' . DS;
+        $images = self::$Model->GetGalleryImages($ID);
+        foreach($images as $image)
+        {
+            $filenameSplit = explode('_', $image->filename);
+            $fullsize = self::$Model->GetMediaInfoByFilename($filenameSplit[2]);
+            if(unlink($path.$image->filepath.DS.$image->filename) && unlink($path.$fullsize->filepath.DS.$fullsize->filename) )
+            {
+                self::$Model->DeleteMediaId($image->mediaId) && self::$Model->DeleteMediaId($fullsize->mediaId);
+            }
+        }
+        if(is_readable($images[0]->filepath) && count(scandir($images[0]->filepath)) == 2)
+        {
+            unlink($images[0]->filepath);
+        } 
+        self::$Model->DeleteGallery($ID);      
+    }
 }

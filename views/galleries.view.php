@@ -1,8 +1,13 @@
 <section id="gallariesView">
     <h2>Galleri</h2>
+    <?php
+    $galleryData = View::CallModel()->GetAlbums();
+    if(sizeof($galleryData) > 0)
+    {
+    ?>
     <div class="gallery-grid">
     <?php
-        foreach(View::CallModel()->GetAlbums() as $album)
+        foreach($galleryData as $album)
         {
     ?>
             <div class="album">
@@ -15,4 +20,13 @@
         }
     ?>
     </div>
+    <?php
+    }
+    else
+    {
+    ?>
+    <h3>Der er ikke nogle gallerier at vise.</h3>
+    <?php
+    }
+    ?>
 </section>

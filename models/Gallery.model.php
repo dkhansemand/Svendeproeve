@@ -93,4 +93,9 @@ class GalleryModel extends Model
                                     INNER JOIN `media` ON `fkGalleryMediaId` = `mediaId`
                                     WHERE `fkAlbumId` = :ID;", [':ID' => $ID])->fetchAll();
     }
+
+    public function DeleteGallery(int $ID)
+    { 
+            return $this->query("DELETE FROM `gallery` WHERE `fkAlbumId` = :ID; DELETE FROM `albums` WHERE `albumId` = :ID", [':ID' => $ID]);   
+    }
 }

@@ -90,7 +90,7 @@
             })
             document.querySelectorAll('.gallery-img .btn-remove').forEach( (elm) => {
                 elm.addEventListener('click', (e) => {
-                    console.log('Element', e.target.previousElementSibling.value)
+                    //console.log('Element', e.target.previousElementSibling.value)
                     
                     const baseURL = document.getElementById('baseURL').value
                     const formData = new FormData() 
@@ -101,7 +101,7 @@
                         return res.json()
                     })
                     .then( (data) => {
-                        console.log('Data fra fetch :: ', data)
+                        //console.log('Data fra fetch :: ', data)
                         if(!data.err)
                         {
                             e.target.parentElement.remove()
