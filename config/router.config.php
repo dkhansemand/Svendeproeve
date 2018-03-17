@@ -44,6 +44,7 @@ const ROUTES = array(
                     [
                         'path' => '/Baadpark',
                         'controller' => 'ProductsController',
+                        'model' => 'Product.model',
                         'view' => 'products.view.php'
                     ],
                     [
@@ -184,6 +185,48 @@ const ROUTES = array(
                         'view' => 'admin'.DS.'news'.DS.'delete.view.php',
                         'controller' => 'NewsController',
                         'model' => 'news.model',
+                        'params' => ['ID'],
+                        'permissions' => []
+                    ],
+                    [
+                        'path' => '/Admin/Baadpark',
+                        'layout' => 'admin',
+                        'view' => 'admin'.DS.'products'.DS.'products.view.php',
+                        'controller' => 'ProductsController',
+                        'model' => 'Product.model',
+                        'permissions' => []
+                    ],
+                    [
+                        'path' => '/Admin/Baadtyper',
+                        'layout' => 'admin',
+                        'view' => 'admin'.DS.'productTypes'.DS.'productTypes.view.php',
+                        'controller' => 'ProductsController',
+                        'model' => 'Product.model',
+                        'permissions' => []
+                    ],
+                    [
+                        'path' => '/Admin/Baadtyper/Opret',
+                        'layout' => 'admin',
+                        'view' => 'admin'.DS.'productTypes'.DS.'create.view.php',
+                        'controller' => 'ProductsController',
+                        'model' => 'Product.model',
+                        'permissions' => []
+                    ],
+                    [
+                        'path' => '/Admin/Baadtype/Ret',
+                        'layout' => 'admin',
+                        'view' => 'admin'.DS.'productTypes'.DS.'edit.view.php',
+                        'controller' => 'ProductsController',
+                        'model' => 'Product.model',
+                        'params' => ['ID'],
+                        'permissions' => []
+                    ],
+                    [
+                        'path' => '/Admin/Baadtype/Slet',
+                        'layout' => 'admin',
+                        'view' => 'admin'.DS.'productTypes'.DS.'delete.view.php',
+                        'controller' => 'ProductsController',
+                        'model' => 'Product.model',
                         'params' => ['ID'],
                         'permissions' => []
                     ],

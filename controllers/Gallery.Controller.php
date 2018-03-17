@@ -103,7 +103,7 @@ class GalleryController extends Core
                 return ['err' => true, 'errors' => $error];
             }
         }
-        return ['err' => true, 'function' => ' data blev ikke modtaget til server. Prøv igen ved at klikke på "Opret"'];
+        return ['err' => true, 'function' => ' data blev ikke modtaget til server. Prøv igen ved at klikke på "Ret"'];
     }
 
     public function DeleteGallery(int $ID)

@@ -18,14 +18,42 @@
             <span>
                 <nav>
                     <a href="<?=Router::Link('/')?>">Til forsiden</a>
-                    <a href="<?=Router::Link('/Admin/Nyheder')?>" class="<?=Router::IsActive('/Admin/Nyheder', 'active')?>">Nyheder</a>
-                    <a href="<?=Router::Link('/Admin/Arrangementer')?>" class="<?=Router::IsActive('/Admin/Arrangementer', 'active')?>">Arrangementer</a>
-                    <a href="<?=Router::Link('/Admin/Galleri')?>" class="<?=Router::IsActive('/Admin/Galleri', 'active')?>">Galleri</a>
-                    <a href="<?=Router::Link('/Admin/Bådpark')?>" class="<?=Router::IsActive('/Admin/Bådpark', 'active')?>">Bådpark</a>
-                    <a href="<?=Router::Link('/Admin/Medlemmer')?>" class="<?=Router::IsActive('/Admin/Medlemmer', 'active')?>">Medlememr</a>
-                    <a href="<?=Router::Link('/Admin/Min-Side')?>" class="<?=Router::IsActive('/Admin/Min-Side', 'active')?>">Min Side</a>
-                    <a href="<?=Router::Link('/Admin/Beskeder')?>" class="<?=Router::IsActive('/Admin/Beskeder', 'active')?>">Beskeder (0)</a>
-                    <a href="<?=Router::Link('/Admin/Nyhedsbrev')?>" class="<?=Router::IsActive('/Admin/Nyhedsbrev', 'active')?>">Nyhedsbrev</a>
+                    <a href="<?=Router::Link('/Admin/Nyheder')?>" 
+                        class="<?=Router::IsActive('/Admin/Nyheder', 'active')?>">
+                        Nyheder
+                    </a>
+                    <a href="<?=Router::Link('/Admin/Arrangementer')?>" 
+                        class="<?=Router::IsActive('/Admin/Arrangementer', 'active')?>">
+                        Arrangementer
+                    </a>
+                    <a href="<?=Router::Link('/Admin/Galleri')?>" 
+                        class="<?=Router::IsActive('/Admin/Galleri', 'active')?>">
+                        Galleri
+                    </a>
+                    <a href="<?=Router::Link('/Admin/Baadpark')?>" 
+                        class="<?=Router::IsActive('/Admin/Baadpark', 'active')?>">
+                        Bådpark
+                    </a>
+                    <a href="<?=Router::Link('/Admin/Baadtyper')?>" 
+                        class="<?=Router::IsActive('/Admin/Baadtyper', 'active')?>">
+                        Bådtyper
+                    </a>
+                    <a href="<?=Router::Link('/Admin/Medlemmer')?>" 
+                        class="<?=Router::IsActive('/Admin/Medlemmer', 'active')?>">
+                        Medlememr
+                    </a>
+                    <a href="<?=Router::Link('/Admin/Min-Side')?>" 
+                        class="<?=Router::IsActive('/Admin/Min-Side', 'active')?>">
+                        Min Side
+                    </a>
+                    <a href="<?=Router::Link('/Admin/Beskeder')?>" 
+                        class="<?=Router::IsActive('/Admin/Beskeder', 'active')?>">
+                        Beskeder (0)
+                    </a>
+                    <a href="<?=Router::Link('/Admin/Nyhedsbrev')?>" 
+                        class="<?=Router::IsActive('/Admin/Nyhedsbrev', 'active')?>">
+                        Nyhedsbrev
+                    </a>
                 </nav>
             </span>
             <?php
