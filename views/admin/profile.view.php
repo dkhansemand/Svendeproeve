@@ -43,9 +43,15 @@
                 <p>Tilmeldt:</p>
             </div>
             <div class="profile-events">
-                <p>Tilmeldt:</p>
-                <p>Tilmeldt:</p>
-                <p>Tilmeldt:</p>
+            <?php
+                $userId = (new Guard)->decoding($_SESSION['global'])->data->userId;
+                foreach(View::CallModel()->GetSubscribedEvents($userID) as $events)
+                {
+            ?>
+                    <p><?=$events->eventTitle?> <?=date_format(date_create($events->eventStartDate), 'd-m-Y')?></p>
+            <?php
+                }
+            ?>
             </div>
         </div>
     </section>

@@ -26,4 +26,11 @@ class ProfileModel extends Model
             return false;
         }
     }
+
+    public function GetSubscribedEvents($userId)
+    {
+        return $this->query("SELECT `eventSubscriberId`, `eventTitle`, `eventStartDate` FROM `eventsubscribers` 
+                                        INNER JOIN `events` ON `eventsId` = `fkEventId`
+                                        WHERE `fkEventSubUserId` = :ID", [':ID' => $userId])->fetchAll();
+    }
 }

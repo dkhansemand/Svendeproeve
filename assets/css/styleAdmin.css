@@ -558,9 +558,9 @@ img
     #profileView .profile
     {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 2fr;
         grid-row-gap: 15px;
-        width: 50%;
+        width: 80%;
     }
 
     #profileView .profile p

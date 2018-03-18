@@ -38,5 +38,12 @@ class User extends Database
         }
     }
 
+    public static function IsSubscribed($userId,  $eventId) : bool
+    {
+        $query = (new self)->query("SELECT `eventSubscriberId` FROM `eventsubscribers` WHERE `fkEventSubUserId` = :ID AND `fkEventId` = :EID", [':ID' => $userId, ':EID' => $eventId]);
+
+        return $query->rowCount() === 1;
+    }
+
    
 }

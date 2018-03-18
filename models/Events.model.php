@@ -80,4 +80,16 @@ class EventsModel extends Model
         $this->query("DELETE FROM `media` WHERE mediaId = (SELECT `eventCOver` FROM `events` WHERE `eventsId` = :ID);", [':ID' => $ID]);
         return $this->query("DELETE FROM `events` WHERE `eventsId` = :ID", [':ID' => $ID]);
     }
+
+    public function AddSubscriber($userId, $eventId)
+    {
+        try
+        {
+            return $this->query("INSERT INTO `eventsubscribers` SET `fkEventSubUserId` = :ID, `fkEventId` = :EID", [':ID' => $userId, ':EID' => $eventId]);
+        }
+        catch(PDOException $err)
+        {
+            return false;
+        }
+    }
 }
