@@ -394,6 +394,16 @@ const ROUTES = array(
                         ]
                     ],
                     [
+                        'path' => '/Admin/Nyhedsbrev',
+                        'layout' => 'admin',
+                        'model' => 'newsletter.model',
+                        'view' => 'admin'.DS.'newsletter.view.php',
+                        'params' => ['ID'],
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS
+                        ]
+                    ],
+                    [
                         'path' => '/api/Gallery/Delete',
                         'layout' => 'api',
                         'view' => 'api'.DS.'gallery.view.php',

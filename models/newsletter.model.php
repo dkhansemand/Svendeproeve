@@ -28,4 +28,16 @@ class NewsletterModel extends Model
             return false;
         }
     }
+
+    public function GetSubscribers() : array
+    {
+        try
+        {
+            return $this->query("SELECT `subscriberEmail` FROM `newslettersubscribers`")->fetchAll();
+        }
+        catch(PDOExecption $err)
+        {
+            return [];
+        }
+    }
 }
