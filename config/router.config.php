@@ -60,6 +60,7 @@ const ROUTES = array(
                     [
                         'path' => '/Kontakt',
                         'controller' => 'ContactController',
+                        'model' => 'Contact.model',
                         'view' => 'contact.view.php'
                     ],
                     [

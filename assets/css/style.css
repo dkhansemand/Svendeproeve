@@ -35,6 +35,12 @@ img
     text-align: center;
 }
 
+.err-msg
+{
+    color: red;
+    font-size: .9em;
+}
+
 @supports(display: grid)
 {
     .grid
@@ -388,6 +394,56 @@ img
     #productsView .th-5-mobile
     {
         display: none;
+    }
+
+    #contactView
+    {
+        background-color: var(--primary-content-bg-color);
+        margin: 15px auto;
+        padding: 20px;
+        width: 80%;
+    }
+    #contactView p
+    {
+        margin: 15px 0;
+    }
+
+    #contactView form
+    {
+        background-color: #eee;
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 0 auto;
+        padding: 10px;
+        width: 350px;
+    }
+
+   
+    #contactView form .input-field input,
+    #contactView form .input-textarea textarea
+    {
+        margin: 5px 0;
+        width: 100%; 
+    }
+    #contactView form .input-field input,
+    #contactView form .input-textarea textarea
+    {
+        padding: 8px 5px;
+    }
+
+    #contactView form button
+    {
+        border: 0;
+        background-color: #ccc;
+        cursor: pointer;
+        font-size: 1.1em;
+        text-align: center;
+        padding: 2px 0;
+    }
+
+    #contactView form .err-msg
+    {
+        margin: 5px 0;
     }
 
     #mapKontakt {
