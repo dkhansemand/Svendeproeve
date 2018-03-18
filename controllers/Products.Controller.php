@@ -4,7 +4,7 @@ class ProductsController extends Core
 {
     public function CreateProductType(array $typeData, string $token)
     {
-        if(!Token::validateToken($token)){
+        if(isset($token) && !Token::validateToken($token)){
             return ['err' => true, 'token' => ' Korrupt data. Prøv igen ved at klikke på "Opret"'];
         }
         if(isset($typeData['productTypeName']) && isset($typeData['typeLevel']))
@@ -30,7 +30,7 @@ class ProductsController extends Core
 
     public function EditProductType(array $typeData, string $token, int $ID)
     {
-        if(!Token::validateToken($token)){
+        if(isset($token) && !Token::validateToken($token)){
             return ['err' => true, 'token' => ' Korrupt data. Prøv igen ved at klikke på "Opret"'];
         }
         if(isset($typeData['productTypeName']) && isset($typeData['typeLevel']))
@@ -61,7 +61,7 @@ class ProductsController extends Core
 
     public function InsertNewProduct(array $productData, string $fileinput, string $token)
     {
-        if(!Token::validateToken($token)){
+        if(isset($token) && !Token::validateToken($token)){
             return ['err' => true, 'token' => ' Korrupt data. Prøv igen ved at klikke på "Opret"'];
         }
         if(isset($productData['productName']) && isset($productData['productStock']) 
@@ -98,7 +98,7 @@ class ProductsController extends Core
 
     public function EditProduct(array $productData, string $fileinput, string $token, int $ID)
     {
-        if(!Token::validateToken($token)){
+        if(isset($token) &&  !Token::validateToken($token)){
             return ['err' => true, 'token' => ' Korrupt data. Prøv igen ved at klikke på "Opret"'];
         }
         if(isset($productData['productName']) && isset($productData['productStock']) 

@@ -12,7 +12,7 @@ class ProfileModel extends Model
     {
         try
         {
-            return $this->query("SELECT `userId`, `userEmail`, `fullname`, `userKm`, `userPhone`, `roleName`, `userLevelName` FROM `users`
+            return $this->query("SELECT `userId`, `userEmail`, `fullname`, `userKm`, `userPhone`, `roleName`, `userLevelName`, `filename` FROM `users`
                                         INNER JOIN `userroles` ON `roleId` = `userRole`
                                         INNER JOIN `userlevels` ON `userKm` >= `userLevelReqKm`
                                         LEFT JOIN `media` ON `mediaId` = `avatar`

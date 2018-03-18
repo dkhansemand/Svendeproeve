@@ -40,7 +40,7 @@
                     </a>
                     <a href="<?=Router::Link('/Admin/Medlemmer')?>" 
                         class="<?=Router::IsActive('/Admin/Medlemmer', 'active')?>">
-                        Medlememr
+                        Medlemmer
                     </a>
                     <a href="<?=Router::Link('/Admin/Min-Side')?>" 
                         class="<?=Router::IsActive('/Admin/Min-Side', 'active')?>">

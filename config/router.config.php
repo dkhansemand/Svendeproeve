@@ -284,6 +284,40 @@ const ROUTES = array(
                         'permissions' => []
                     ],
                     [
+                        'path' => '/Admin/Medlemmer',
+                        'layout' => 'admin',
+                        'controller' => 'MembersController',
+                        'model' => 'Members.model',
+                        'view' => 'admin'.DS.'members'.DS.'members.view.php',
+                        'permissions' => []
+                    ],
+                    [
+                        'path' => '/Admin/Medlem/Opret',
+                        'layout' => 'admin',
+                        'controller' => 'MembersController',
+                        'model' => 'Members.model',
+                        'view' => 'admin'.DS.'members'.DS.'create.view.php',
+                        'permissions' => []
+                    ],
+                    [
+                        'path' => '/Admin/Medlem/Ret',
+                        'layout' => 'admin',
+                        'controller' => 'MembersController',
+                        'model' => 'Members.model',
+                        'view' => 'admin'.DS.'members'.DS.'edit.view.php',
+                        'params' => ['ID'],
+                        'permissions' => []
+                    ],
+                    [
+                        'path' => '/Admin/Medlem/Slet',
+                        'layout' => 'admin',
+                        'controller' => 'MembersController',
+                        'model' => 'Members.model',
+                        'view' => 'admin'.DS.'members'.DS.'delete.view.php',
+                        'params' => ['ID'],
+                        'permissions' => []
+                    ],
+                    [
                         'path' => '/api/Gallery/Delete',
                         'layout' => 'api',
                         'view' => 'api'.DS.'gallery.view.php',

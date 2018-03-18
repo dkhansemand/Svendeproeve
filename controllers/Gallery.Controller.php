@@ -5,7 +5,7 @@ class GalleryController extends Core
     
     public function CreateNewGallery(array $galleryData, string $fileinput, string $token)
     {
-        if(!Token::validateToken($token)){
+        if(isset($token) && !Token::validateToken($token)){
             return ['err' => true, 'token' => ' Korrupt data. Prøv igen ved at klikke på "Opret"'];
         }
         if(isset($galleryData['albumTitle']) && isset($galleryData['images']) 
@@ -54,7 +54,7 @@ class GalleryController extends Core
 
     public function EditGallery(array $galleryData, string $fileinput, string $token, int $ID)
     {
-        if(!Token::validateToken($token)){
+        if(isset($token) && !Token::validateToken($token)){
             return ['err' => true, 'token' => ' Korrupt data. Prøv igen ved at klikke på "Opret"'];
         }
         if(isset($galleryData['albumTitle']) && isset($galleryData['images']) 

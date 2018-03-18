@@ -9,7 +9,7 @@ class NewsController extends Core
 
     public function InsertNewsArticle(array $newsData, string $token)
     {
-        if(!Token::validateToken($token)){
+        if( isset($token) && !Token::validateToken($token)){
             return ['err' => true, 'token' => ' Korrupt data. Prøv igen ved at klikke på "Opret"'];
         }
         if(isset($newsData['newsTitle']) && isset($newsData['newsContent'])
@@ -37,7 +37,7 @@ class NewsController extends Core
 
     public function EditNewsArticle(array $newsData, string $token, int $ID)
     {
-        if(!Token::validateToken($token)){
+        if(isset($token) && !Token::validateToken($token)){
             return ['err' => true, 'token' => ' Korrupt data. Prøv igen ved at klikke på "Opret"'];
         }
         if(isset($newsData['newsTitle']) && isset($newsData['newsContent'])

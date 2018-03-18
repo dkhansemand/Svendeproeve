@@ -9,7 +9,7 @@ class LoginController extends Core
 
     public function VerifyLogin(array $loginData, string $token)
     {
-        if(!Token::validateToken($token)){
+        if(isset($token) && !Token::validateToken($token)){
             return false;
         }
         if(isset($loginData['username']) && isset($loginData['password']))

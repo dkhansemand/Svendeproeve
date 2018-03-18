@@ -7,7 +7,20 @@
         <h2>Min Side</h2>
         <div class="profile">
             <div class="profile-img">
+            <?php
+                if(!is_null($userData->filename))
+                {
+               ?>
+                    <img src="<?=Router::$BASE?>assets/media/<?=$userData->filename?>" alt="Profil billede">
+               <?php
+                }
+                else
+                {
+            ?>
                 <img src="<?=Router::$BASE?>assets/media/profile_placeholder.jpg" alt="Profil billede">
+            <?php
+                }
+            ?>
             </div>
             <span></span>
             <div class="profile-info">

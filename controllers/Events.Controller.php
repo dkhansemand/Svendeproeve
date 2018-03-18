@@ -5,7 +5,7 @@ class EventsController extends Core
 
     public function InsertEvent(array $eventData, string $fileinput, string $token)
     {
-        if(!Token::validateToken($token)){
+        if(isset($token) && !Token::validateToken($token)){
             return ['err' => true, 'token' => ' Korrupt data. Prøv igen ved at klikke på "Opret"'];
         }
         if(isset($eventData['eventTitle']) && isset($eventData['eventDescription']) 
@@ -36,7 +36,7 @@ class EventsController extends Core
 
     public function EditEvent(array $eventData, string $fileinput, string $token, int $ID)
     {
-        if(!Token::validateToken($token)){
+        if(isset($token) && !Token::validateToken($token)){
             return ['err' => true, 'token' => ' Korrupt data. Prøv igen ved at klikke på "Opret"'];
         }
         if(isset($eventData['eventTitle']) && isset($eventData['eventDescription']) 
