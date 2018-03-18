@@ -14,6 +14,7 @@
     }
     $productData = View::CallModel()->GetProductById($ID);
 ?>
+<div class="container">
 <section id="productView">
     <h2>Ret kajak</h2>
     <?= isset($success) ? '<p>'.$success.'</p>' : ''; ?>
@@ -93,3 +94,4 @@
         <button type="submit" name="btnProductEdit" class="btn btn-accent">Ret</button>
     </form>
 </section>
+</div>

@@ -15,6 +15,7 @@
 
     $typeData = View::CallModel()->GetTypeById($ID);
 ?>
+<div class="container">
 <section id="typeView">
     <h2>Ret</h2>
     <?= isset($success) ? '<p>'.$success.'</p>' : ''; ?>
@@ -48,3 +49,4 @@
         <button type="submit" name="btnTypeEdit" class="btn btn-accent">Ret</button>
     </form>
 </section>
+</div>

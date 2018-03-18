@@ -15,6 +15,7 @@
         //echo 'POST<pre>',var_dump($POST), ' | FILES ', var_dump($_FILES), '</pre>';
     }
 ?>
+<div class="container">
 <section id="galleryView">
     <h2>Opret galleri</h2>
     <?= isset($success) ? '<h3>'.$success.'</h3>' : ''; ?>
@@ -88,4 +89,5 @@
             <button type="submit" name="btnGalleryCreate" class="btn btn-accent">Opret</button>
         </form>
 </section>
+</div>
 <script src="<?=Router::$BASE?>assets/js/admin/galleryUpload.js"></script>

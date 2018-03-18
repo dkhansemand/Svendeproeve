@@ -28,4 +28,14 @@ class ContactModel extends Model
             return false;
         }
     }
+
+    public function GetAllMessages() : array
+    {
+        return $this->query("SELECT `contactId`, `contactName`, `contactEmail`, `contactMobile`, `contactMessage` FROM `contacts` ORDER BY `contactIs` DESC")->fetchAll();
+    }
+
+    public function DeleteMessageById(int $ID)
+    {
+        return $this->query("DELETE FROM `contacts` WHERE `contactId` = :ID", [':ID' => $ID]);
+    }
 }

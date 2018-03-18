@@ -8,6 +8,7 @@
         }
     }
 ?>
+<div class="container">
 <section id="eventsView">
     <h2>Slet kajak?</h2>
     <span class="delete-buttons">
@@ -15,3 +16,4 @@
         <a class="btn btn-error" href="<?=Router::Link('/Admin/Baadpark')?>">Anullér</a>
     </span>
 </section>
+</div>

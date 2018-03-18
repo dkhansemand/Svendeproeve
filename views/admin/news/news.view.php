@@ -1,3 +1,4 @@
+<div class="container">
 <section id="news">
     <h2>Nyheder</h2>
     <a href="<?=Router::Link('/Admin/Nyheder/Opret')?>" class="btn-accent">Opret nyhed</a>
@@ -43,3 +44,4 @@
         </tbody>
     </table>
 </section>
+</div>

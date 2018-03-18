@@ -1,3 +1,4 @@
+<div class="container">
 <section id="eventsView">
     <h2>Arrangementer</h2>
     <a href="<?=Router::Link('/Admin/Arrangement/Opret')?>" class="btn-accent">Opret arrangement</a>
@@ -43,3 +44,4 @@
         </tbody>
     </table>
 </section>
+</div>

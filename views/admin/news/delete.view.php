@@ -8,6 +8,7 @@
         }
     }
 ?>
+<div class="container">
 <section id="newsView">
     <h2>Slet Nyheden?</h2>
     <span class="delete-buttons">
@@ -15,3 +16,4 @@
         <a class="btn btn-error" href="<?=Router::Link('/Admin/Nyheder')?>">Anullér</a>
     </span>
 </section>
+</div>

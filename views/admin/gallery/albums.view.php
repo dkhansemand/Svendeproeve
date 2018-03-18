@@ -1,3 +1,4 @@
+<div class="container">
 <section id="galleryView">
     <h2>Galleri</h2>
     <a href="<?=Router::Link('/Admin/Galleri/Opret')?>" class="btn-accent">Opret galleri</a>
@@ -21,3 +22,4 @@
     ?>
     </div>
 </section>
+</div>

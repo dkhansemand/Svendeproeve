@@ -48,7 +48,7 @@
                     </a>
                     <a href="<?=Router::Link('/Admin/Beskeder')?>" 
                         class="<?=Router::IsActive('/Admin/Beskeder', 'active')?>">
-                        Beskeder (0)
+                        Beskeder (<?=Misc::GetMssagesCount()->messages?>)
                     </a>
                     <a href="<?=Router::Link('/Admin/Nyhedsbrev')?>" 
                         class="<?=Router::IsActive('/Admin/Nyhedsbrev', 'active')?>">
@@ -77,7 +77,7 @@
             </section>
         </footer>
     </section>
-   <?php  
+<?php  
     
         if(@__DEBUG__ === true)
         {

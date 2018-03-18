@@ -83,11 +83,11 @@ img
     .grid
     {
         display: grid;
-        grid-template-columns: minmax(5vw,8vw) auto minmax(5vw,8vw);
+        grid-template-columns: minmax(10vw,22vw) auto minmax(10vw,22vw);
         grid-template-rows: 350px auto 50px;
         grid-template-areas: 
             "header header header"
-            ". main ."
+            "main main main"
             "footer footer footer";
         min-height: 100vh;
     }
@@ -129,6 +129,7 @@ img
         justify-content: space-between;
         align-items: center;
         height: 50px;
+        padding: 0 15vw;
     }
 
     .grid main nav a
@@ -155,6 +156,13 @@ img
     {
         grid-area: main;
         width: 100%;
+    }
+
+    .container
+    {
+        min-width: 60vw;
+        max-width: 65vw;
+        margin: 0 auto;
     }
 
     .grid footer
@@ -484,9 +492,33 @@ img
         font-size: 1.1em;
         justify-self: end;
     }
+
+    #messagesView
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+
+    #messagesView article
+    {
+        background-color: var( --primary-content-bg-color);
+        padding: 5px 10px;
+    }
     
 }
-
+@media screen and (max-width: 1100px) {
+    .grid main nav
+    {
+        padding: 0 5vw;
+    }
+    .container
+    {
+        min-width: 70vw;
+        max-width: 80vw;
+    }
+}
 @media screen and (max-width: 960px) {
     .grid
     {
@@ -497,6 +529,15 @@ img
             "header header header"
             ". main ."
             "footer footer footer";
+    }
+    .grid main nav
+    {
+        height: auto;
+        grid-auto-flow:initial;
+        grid-template-columns: repeat(4,1fr);
+        justify-content: space-between;
+        align-items: initial;
+        padding: 10px 15px;
     }
     .grid header
     {
@@ -531,15 +572,6 @@ img
         font-weight: 500;
         margin-top: 50px;
     }
-    .grid main nav
-    {
-        height: auto;
-        grid-auto-flow:initial;
-        grid-template-columns: repeat(4,1fr);
-        justify-content: space-between;
-        align-items: initial;
-        padding: 10px 15px;
-    }
     .grid main nav a
     {
         margin: 5px 0;
@@ -547,13 +579,29 @@ img
 
     .grid footer
     {
+        height: 150px;
         padding: 15px 5px; 
+    }
+    .grid footer section
+    {
+        display: block;
+        padding: 0 20px;
     }
 }
 @media screen and (max-width: 562px) {
+    .grid
+    {
+        
+        grid-template-columns: 1fr;
+        grid-template-rows: 200px auto 150px;
+        grid-template-areas: 
+            "header"
+            "main"
+            "footer";
+    }
     .grid header
     {
-        background-position-y: -80px;
+        background-position-y: initial;
     }
     .grid header #topHeader h1
     {

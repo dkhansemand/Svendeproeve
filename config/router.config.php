@@ -258,6 +258,23 @@ const ROUTES = array(
                         'permissions' => []
                     ],
                     [
+                        'path' => '/Admin/Beskeder',
+                        'layout' => 'admin',
+                        'view' => 'admin'.DS.'messages'.DS.'messages.view.php',
+                        'controller' => 'ContactController',
+                        'model' => 'Contact.model',
+                        'permissions' => []
+                    ],
+                    [
+                        'path' => '/Admin/Besked/Slet',
+                        'layout' => 'admin',
+                        'view' => 'admin'.DS.'messages'.DS.'delete.view.php',
+                        'controller' => 'ContactController',
+                        'model' => 'Contact.model',
+                        'params' => ['ID'],
+                        'permissions' => []
+                    ],
+                    [
                         'path' => '/api/Gallery/Delete',
                         'layout' => 'api',
                         'view' => 'api'.DS.'gallery.view.php',

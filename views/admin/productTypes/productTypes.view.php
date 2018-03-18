@@ -1,3 +1,4 @@
+<div class="container">
 <section id="news">
     <h2>Kajaktyper</h2>
     <a href="<?=Router::Link('/Admin/Kajaktype/Opret')?>" class="btn-accent">Opret ny type</a>
@@ -40,3 +41,4 @@
         </tbody>
     </table>
 </section>
+</div>

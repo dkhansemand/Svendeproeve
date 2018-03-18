@@ -17,6 +17,7 @@
 
     $galleryData = View::CallModel()->GetGalleryByAlbumId($albumId);
 ?>
+<div class="container">
 <section id="galleryView">
     <h2>Ret galleri</h2>
     <?= isset($success) ? '<h3>'.$success.'</h3>' : ''; ?>
@@ -109,4 +110,5 @@
             <button type="submit" name="btnGalleryEdit" class="btn btn-accent">Ret</button>
         </form>
 </section>
+</div>
 <script src="<?=Router::$BASE?>assets/js/admin/galleryUpload.js"></script>

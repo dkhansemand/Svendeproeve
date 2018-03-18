@@ -12,6 +12,7 @@
         }
     }
 ?>
+<div class="container">
 <section id="productView">
     <h2>Opret ny kajak</h2>
     <?= isset($success) ? '<p>'.$success.'</p>' : ''; ?>
@@ -91,3 +92,4 @@
         <button type="submit" name="btnProductCreate" class="btn btn-accent">Opret</button>
     </form>
 </section>
+</div>

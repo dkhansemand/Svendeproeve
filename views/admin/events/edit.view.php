@@ -13,6 +13,7 @@
     }
     $eventData = View::CallModel()->GetEventById(Router::GetParamByName('ID'));
 ?>
+<div class="container">
 <section id="eventView">
     <h2>Ret arrangement</h2>
     <?= isset($success) ? '<p>'.$success.'</p>' : ''; ?>
@@ -70,6 +71,7 @@
         <button type="submit" name="btnEventEdit" class="btn btn-accent">Ret</button>
     </form>
 </section>
+</div>
 <script src="//cloud.tinymce.com/stable/tinymce.min.js?apiKey=fh6esofusmwjepd4rbl7p8z8x9w8a62ss1bc5x1clu88ei7f"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function(e){

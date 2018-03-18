@@ -8,6 +8,7 @@
         }
     }
 ?>
+<div class="container">
 <section id="newsView">
     <h2>Slet galleriet?</h2>
     <span class="delete-buttons">
@@ -15,3 +16,4 @@
         <a class="btn btn-error" href="<?=Router::Link('/Admin/Galleri')?>">Anullér</a>
     </span>
 </section>
+</div>

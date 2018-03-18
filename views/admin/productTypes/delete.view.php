@@ -12,6 +12,7 @@
         }
     }
 ?>
+<div class="container">
 <section id="typeView">
     <?= isset($error) ? '<h3>'.$error.'</h3>' : ''?>
     <h2>Slet kajaktypen?</h2>
@@ -20,3 +21,4 @@
         <a class="btn btn-error" href="<?=Router::Link('/Admin/Kajaktype')?>">Anullér</a>
     </span>
 </section>
+</div>

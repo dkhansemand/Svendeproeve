@@ -1,3 +1,4 @@
+<div class="container">
 <section id="news">
     <h2>Bådpark</h2>
     <a href="<?=Router::Link('/Admin/Baadpark/Opret')?>" class="btn-accent">Opret ny kajak</a>
@@ -52,3 +53,4 @@
         </tbody>
     </table>
 </section>
+</div>

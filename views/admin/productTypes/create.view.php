@@ -12,6 +12,7 @@
         }
     }
 ?>
+<div class="container">
 <section id="typeView">
     <h2>Opret</h2>
     <?= isset($success) ? '<p>'.$success.'</p>' : ''; ?>
@@ -45,3 +46,4 @@
         <button type="submit" name="btnTypeCreate" class="btn btn-accent">Opret</button>
     </form>
 </section>
+</div>
