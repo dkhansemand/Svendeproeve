@@ -1,3 +1,4 @@
+<div class="container">
 <h1>Bådpark</h1>
 <section id="productsView">
     <div class="product-header">
@@ -51,3 +52,4 @@
         }
     ?>
 </section>
+    </div>

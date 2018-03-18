@@ -4,6 +4,7 @@
     $article = View::CallModel()->GetArticleById($ID);
 
 ?>
+<div class="container">
 <section id="newsGrid">
     <article>
         <h2>Nyhed '<?=$article->newsTitle?>'</h2>
@@ -13,3 +14,4 @@
         </p>
     </article>
 </section>
+</div>

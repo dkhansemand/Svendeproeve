@@ -1,3 +1,4 @@
+<div class="container">
 <section id="gallariesView">
     <h2>Galleri</h2>
     <?php
@@ -30,3 +31,4 @@
     }
     ?>
 </section>
+</div>

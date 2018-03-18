@@ -35,7 +35,7 @@
         ?>
         <div class="input-field">
             <label for="typeLevel">Sværhedsgrad</label>
-            <input type="number" min="0" name="typeLevel" id="typeLevel" value="<?=$POST['typeLevel'] ?? $typeData->kajakTypeLevel ?? null?>" required> *
+            <input type="number" min="1" max="11" name="typeLevel" id="typeLevel" value="<?=$POST['typeLevel'] ?? $typeData->kajakTypeLevel ?? null?>" required> *
             <?php
                 if(isset($return['errors']['typeLevel']))
                 {

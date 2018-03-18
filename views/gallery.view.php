@@ -74,6 +74,7 @@
     }
 
 ?>
+<div class="container">
 <section id="galleriesView">
     <h2>Galleri - <?php if(isset($galleryData[0])){ echo (empty($galleryData[0]->eventTitle) ? $galleryData[0]->albumName : $galleryData[0]->eventTitle); }?></h2>
     <?php
@@ -111,6 +112,7 @@
         </div>
     </div>
 </section>
+    </div>
 <script>
     ( () => {
         // Open the Modal

@@ -86,6 +86,16 @@ class Validate{
         ) ? true : false;
     }
 
+    public static function intMinMax(int $int, int $min = 0, int $max = 99) : bool
+    {
+        return (
+            isset($int) &&
+            is_numeric($int) &&
+            (int)$int >= (int)$min && 
+            (int)$int <= (int)$max
+        ) ? true : false;
+    }
+
     /**
      * Check if phonenumber is valid with country code included
      *

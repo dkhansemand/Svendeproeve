@@ -24,7 +24,7 @@
                     <a href="<?=Router::Link('/Baadpark')?>" class="<?=Router::IsActive('/Baadpark', 'active')?>">Bådpark</a>
                     <a href="<?=Router::Link('/Bliv-Medlem')?>" class="<?=Router::IsActive('/Bliv-Medlem', 'active')?>">Bliv Medlem</a>
                     <a href="<?=Router::Link('/Min-Side')?>" class="<?=Router::IsActive('/Min-Side', 'active')?>">Min Side</a>
-                    <a href="">Kontakt</a>
+                    <a href="<?=Router::Link('/Kontakt')?>" class="<?=Router::IsActive('/Kontakt', 'active')?>">Kontakt</a>
                 </nav>
             </span>
             <?php

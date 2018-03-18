@@ -1,3 +1,4 @@
+<div class="container">
 <section id="member">
     <h2>Bliv Mdlem</h2>
     <br>
@@ -15,3 +16,4 @@
         <p>500,-</p>
     </span>
 </section>
+</div>

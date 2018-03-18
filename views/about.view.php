@@ -1,3 +1,4 @@
+<div class="container">
 <section id="aboutGrid">
     <section id="aboutContent">
         <h2>Om klubben</h2>
@@ -65,3 +66,4 @@
         </article>
     </section>
 </section>
+</div>

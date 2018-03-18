@@ -2,6 +2,7 @@
     $page = Router::GetParamByName('PAGE') ?? null;
     $currentPage = isset($page) ? $page : 1;
 ?>
+<div class="container">
 <h1>Nyheder</h1>
 <section id="newsGrid">
     <?php
@@ -39,3 +40,4 @@
         ?>
     </div>
 </section>
+        </div>

@@ -11,7 +11,7 @@ class ProductsController extends Core
         {
             $error = [];
             $typeName = Validate::stringBetween($typeData['productTypeName'], 2, 45) ? $typeData['productTypeName'] : $error['productTypeName'] = 'Navnet må kun inholde bogstaver og tal. Samt være mellem 2 og 45 tegn';
-            $typeLevel = Validate::intBetween($typeData['typeLevel'], 1, 99) ? (int)$typeData['typeLevel'] : $error['typeLevel'] = 'Sværhedsgraden skal være tal og mellem 0 og 99';
+            $typeLevel = Validate::intMinMax((int)$typeData['typeLevel'], 1, 11) ? (int)$typeData['typeLevel'] : $error['typeLevel'] = 'Sværhedsgraden skal være tal og mellem 0 og 99';
 
             if(sizeof($error) === 0)
             {
@@ -37,7 +37,7 @@ class ProductsController extends Core
         {
             $error = [];
             $typeName = Validate::stringBetween($typeData['productTypeName'], 2, 45) ? $typeData['productTypeName'] : $error['productTypeName'] = 'Navnet må kun inholde bogstaver og tal. Samt være mellem 2 og 45 tegn';
-            $typeLevel = Validate::intBetween($typeData['typeLevel'], 1, 99) ? (int)$typeData['typeLevel'] : $error['typeLevel'] = 'Sværhedsgraden skal være tal og mellem 0 og 99';
+            $typeLevel = Validate::intMinMax((int)$typeData['typeLevel'], 1, 11) ? (int)$typeData['typeLevel'] : $error['typeLevel'] = 'Sværhedsgraden skal være tal og mellem 0 og 99';
 
             if(sizeof($error) === 0)
             {

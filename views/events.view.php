@@ -1,3 +1,4 @@
+<div class="container">
 <section id="eventsView">
     <h2>Arrangementer</h2>
     <?php
@@ -18,3 +19,4 @@
         }
     ?>
 </section>
+    </div>
