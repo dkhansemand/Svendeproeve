@@ -48,7 +48,7 @@
             <input type="search" name="searchQuery" id="searchQuery" placeholder="Søg på sitet" required>
         </form>
         <article>
-            <img src="./assets/media/kajak01.jpg" alt="" srcset="">
+            <img src="./assets/media/img02.jpg" alt="" srcset="">
             <h3>Nyheder</h3>
             <span>
                 <p>07/04 Nye kajakker til salg</p>
@@ -56,8 +56,14 @@
             </span>
             <a href="" class="btn-accent">Nyheder &raquo;</a>
         </article>
+        <form action="" id="newsletterForm" method="post">
+            <p>Tilmeld nyhedsbrev</p>
+            <input type="email" name="emailSubscribe" id="emailSubscribe" placeholder="Indtast email og tryk enter" required>
+            <input type="hidden" name="" id="baseURL" value="<?=Router::$BASE?>">
+            <span class="message"></span>
+        </form>
         <article>
-            <img src="./assets/media/kajak01.jpg" alt="" srcset="">
+            <img src="./assets/media/img01.jpg" alt="" srcset="">
             <h3>2016</h3>
             <p>Juli</p>
             <p>04. Tur til Gudenåen</p>
@@ -67,3 +73,4 @@
     </section>
 </section>
 </div>
+<script src="<?=Router::$BASE?>assets/js/newsletter.js"></script>

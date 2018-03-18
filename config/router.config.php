@@ -6,6 +6,7 @@ const ROUTES = array(
                     [
                         'path' => '/Om-Klubben',
                         'controller' => 'AboutController',
+                        'model' => 'About.model',
                         'view' => 'about.view.php'
                     ],
                     [
@@ -329,5 +330,11 @@ const ROUTES = array(
                         'layout' => 'api',
                         'view' => 'api'.DS.'gallery.view.php',
                         'model' => 'Gallery.model'
+                    ],
+                    [
+                        'path' => '/api/Newsletter',
+                        'layout' => 'api',
+                        'view' => 'api'.DS.'newsletter.view.php',
+                        'model' => 'newsletter.model'
                     ]
                 );
