@@ -92,9 +92,7 @@ const ROUTES = array(
                         'layout' => 'admin',
                         'view' => 'admin'.DS.'dashboard.view.php',
                         'controller' => 'AdminController',
-                        'permissions' => [
-                            
-                        ]
+                        'permissions' => []
                     ],
                     [
                         'path' => '/Admin/Arrangementer',
@@ -102,7 +100,9 @@ const ROUTES = array(
                         'view' => 'admin'.DS.'events'.DS.'events.view.php',
                         'controller' => 'EventsController',
                         'model' => 'Events.model',
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS
+                        ]
                     ],
                     [
                         'path' => '/Admin/Arrangement/Opret',
@@ -110,7 +110,10 @@ const ROUTES = array(
                         'view' => 'admin'.DS.'events'.DS.'create.view.php',
                         'controller' => 'EventsController',
                         'model' => 'Events.model',
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS,
+                            Permission::PERM_ADMIN_EVENT_CREATE
+                        ]
                     ],
                     [
                         'path' => '/Admin/Arrangement/Ret',
@@ -119,7 +122,10 @@ const ROUTES = array(
                         'controller' => 'EventsController',
                         'model' => 'Events.model',
                         'params' => ['ID'],
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS,
+                            Permission::PERM_ADMIN_EVENT_UPDATE
+                        ]
                     ],
                     [
                         'path' => '/Admin/Arrangement/Slet',
@@ -128,7 +134,10 @@ const ROUTES = array(
                         'controller' => 'EventsController',
                         'model' => 'Events.model',
                         'params' => ['ID'],
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS,
+                            Permission::PERM_ADMIN_EVENT_DELETE
+                        ]
                     ],
                     [
                         'path' => '/Admin/Galleri',
@@ -136,7 +145,9 @@ const ROUTES = array(
                         'view' => 'admin'.DS.'gallery'.DS.'albums.view.php',
                         'controller' => 'GalleryController',
                         'model' => 'Gallery.model',
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS
+                        ]
                     ],
                     [
                         'path' => '/Admin/Galleri/Opret',
@@ -144,7 +155,10 @@ const ROUTES = array(
                         'view' => 'admin'.DS.'gallery'.DS.'create.view.php',
                         'controller' => 'GalleryController',
                         'model' => 'Gallery.model',
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS,
+                            Permission::PERM_ADMIN_GALLERY_CREATE
+                        ]
                     ],
                     [
                         'path' => '/Admin/Galleri/Ret',
@@ -153,7 +167,10 @@ const ROUTES = array(
                         'controller' => 'GalleryController',
                         'model' => 'Gallery.model',
                         'params' => ['ID'],
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS,
+                            Permission::PERM_ADMIN_GALLERY_UPDATE
+                        ]
                     ],
                     [
                         'path' => '/Admin/Galleri/Slet',
@@ -162,7 +179,10 @@ const ROUTES = array(
                         'controller' => 'GalleryController',
                         'model' => 'Gallery.model',
                         'params' => ['ID'],
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS,
+                            Permission::PERM_ADMIN_GALLERY_DELETE
+                        ]
                     ],
                     [
                         'path' => '/Admin/Nyheder',
@@ -170,7 +190,9 @@ const ROUTES = array(
                         'view' => 'admin'.DS.'news'.DS.'news.view.php',
                         'controller' => 'NewsController',
                         'model' => 'news.model',
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS
+                        ]
                     ],
                     [
                         'path' => '/Admin/Nyheder/Opret',
@@ -178,7 +200,10 @@ const ROUTES = array(
                         'view' => 'admin'.DS.'news'.DS.'create.view.php',
                         'controller' => 'NewsController',
                         'model' => 'news.model',
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS,
+                            Permission::PERM_ADMIN_NEWS_CREATE
+                        ]
                     ],
                     [
                         'path' => '/Admin/Nyheder/Ret',
@@ -187,7 +212,10 @@ const ROUTES = array(
                         'controller' => 'NewsController',
                         'model' => 'news.model',
                         'params' => ['ID'],
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS,
+                            Permission::PERM_ADMIN_NEWS_UPDATE
+                        ]
                     ],
                     [
                         'path' => '/Admin/Nyheder/Slet',
@@ -196,7 +224,10 @@ const ROUTES = array(
                         'controller' => 'NewsController',
                         'model' => 'news.model',
                         'params' => ['ID'],
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS,
+                            Permission::PERM_ADMIN_NEWS_DELETE
+                        ]
                     ],
                     [
                         'path' => '/Admin/Baadpark',
@@ -204,7 +235,9 @@ const ROUTES = array(
                         'view' => 'admin'.DS.'products'.DS.'products.view.php',
                         'controller' => 'ProductsController',
                         'model' => 'Product.model',
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS
+                        ]
                     ],
                     [
                         'path' => '/Admin/Baadpark/Opret',
@@ -212,7 +245,10 @@ const ROUTES = array(
                         'view' => 'admin'.DS.'products'.DS.'create.view.php',
                         'controller' => 'ProductsController',
                         'model' => 'Product.model',
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS,
+                            Permission::PERM_ADMIN_PRODUCT_CREATE
+                        ]
                     ],
                     [
                         'path' => '/Admin/Baadpark/Ret',
@@ -221,7 +257,10 @@ const ROUTES = array(
                         'controller' => 'ProductsController',
                         'model' => 'Product.model',
                         'params' => ['ID'],
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS,
+                            Permission::PERM_ADMIN_PRODUCT_UPDATE
+                        ]
                     ],
                     [
                         'path' => '/Admin/Baadpark/Slet',
@@ -230,7 +269,10 @@ const ROUTES = array(
                         'controller' => 'ProductsController',
                         'model' => 'Product.model',
                         'params' => ['ID'],
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS,
+                            Permission::PERM_ADMIN_PRODUCT_DELETE
+                        ]
                     ],
                     [
                         'path' => '/Admin/Kajaktyper',
@@ -238,7 +280,9 @@ const ROUTES = array(
                         'view' => 'admin'.DS.'productTypes'.DS.'productTypes.view.php',
                         'controller' => 'ProductsController',
                         'model' => 'Product.model',
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS
+                        ]
                     ],
                     [
                         'path' => '/Admin/Kajaktype/Opret',
@@ -246,7 +290,10 @@ const ROUTES = array(
                         'view' => 'admin'.DS.'productTypes'.DS.'create.view.php',
                         'controller' => 'ProductsController',
                         'model' => 'Product.model',
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS,
+                            Permission::PERM_ADMIN_PRODUCT_CREATE
+                        ]
                     ],
                     [
                         'path' => '/Admin/Kajaktype/Ret',
@@ -255,7 +302,10 @@ const ROUTES = array(
                         'controller' => 'ProductsController',
                         'model' => 'Product.model',
                         'params' => ['ID'],
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS,
+                            Permission::PERM_ADMIN_PRODUCT_UPDATE
+                        ]
                     ],
                     [
                         'path' => '/Admin/Kajaktype/Slet',
@@ -264,7 +314,10 @@ const ROUTES = array(
                         'controller' => 'ProductsController',
                         'model' => 'Product.model',
                         'params' => ['ID'],
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS,
+                            Permission::PERM_ADMIN_PRODUCT_DELETE
+                        ]
                     ],
                     [
                         'path' => '/Admin/Beskeder',
@@ -272,7 +325,9 @@ const ROUTES = array(
                         'view' => 'admin'.DS.'messages'.DS.'messages.view.php',
                         'controller' => 'ContactController',
                         'model' => 'Contact.model',
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS
+                        ]
                     ],
                     [
                         'path' => '/Admin/Besked/Slet',
@@ -281,7 +336,9 @@ const ROUTES = array(
                         'controller' => 'ContactController',
                         'model' => 'Contact.model',
                         'params' => ['ID'],
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS
+                        ]
                     ],
                     [
                         'path' => '/Admin/Min-Side',
@@ -297,7 +354,9 @@ const ROUTES = array(
                         'controller' => 'MembersController',
                         'model' => 'Members.model',
                         'view' => 'admin'.DS.'members'.DS.'members.view.php',
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS
+                        ]
                     ],
                     [
                         'path' => '/Admin/Medlem/Opret',
@@ -305,7 +364,10 @@ const ROUTES = array(
                         'controller' => 'MembersController',
                         'model' => 'Members.model',
                         'view' => 'admin'.DS.'members'.DS.'create.view.php',
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS,
+                            Permission::PERM_ADMIN_CREATE_USER
+                        ]
                     ],
                     [
                         'path' => '/Admin/Medlem/Ret',
@@ -314,7 +376,10 @@ const ROUTES = array(
                         'model' => 'Members.model',
                         'view' => 'admin'.DS.'members'.DS.'edit.view.php',
                         'params' => ['ID'],
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS,
+                            Permission::PERM_ADMIN_UPDATE_USER
+                        ]
                     ],
                     [
                         'path' => '/Admin/Medlem/Slet',
@@ -323,7 +388,10 @@ const ROUTES = array(
                         'model' => 'Members.model',
                         'view' => 'admin'.DS.'members'.DS.'delete.view.php',
                         'params' => ['ID'],
-                        'permissions' => []
+                        'permissions' => [
+                            Permission::PERM_ADMIN_PANEL_ACCESS,
+                            Permission::PERM_ADMIN_DELETE_USER
+                        ]
                     ],
                     [
                         'path' => '/api/Gallery/Delete',
