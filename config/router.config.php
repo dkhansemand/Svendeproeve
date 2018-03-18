@@ -276,6 +276,14 @@ const ROUTES = array(
                         'permissions' => []
                     ],
                     [
+                        'path' => '/Admin/Min-Side',
+                        'layout' => 'admin',
+                        'controller' => 'ProfileController',
+                        'model' => 'Profile.model',
+                        'view' => 'admin'.DS.'profile.view.php',
+                        'permissions' => []
+                    ],
+                    [
                         'path' => '/api/Gallery/Delete',
                         'layout' => 'api',
                         'view' => 'api'.DS.'gallery.view.php',

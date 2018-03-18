@@ -17,7 +17,6 @@
                 <p>Færdighedsniveau:</p>
                 <p>Roede kilometre:</p>
                 <p>&nbsp;</p>
-                <p>&nbsp;</p>
             </div>
             <div class="profile-data">
                 <p><?=$userData->fullname?></p>
@@ -25,8 +24,7 @@
                 <p><?=$userData->userPhone ?? '(ikke angivet)'?></p>
                 <p><?=$userData->userLevelName?></p>
                 <p><?=$userData->userKm?></p>
-                <p><a href="<?=Router::Link('/Admin/Min-Side')?>">Gå til admin</a></p>
-                <p><a href="<?=Router::Link('/Logud')?>">Log ud</a></p>    
+                <p><a href="<?=Router::Link('/Logud')?>">Log ud</a></p>
             </div>
             <div class="profile-events">
                 <p>Tilmeldt:</p>

@@ -1,1 +1,3 @@
-<h2>super admin test</h2>
+<?php
+
+Router::Redirect('/Admin/Min-Side');
