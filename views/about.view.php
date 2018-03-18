@@ -44,7 +44,7 @@
         </div>
     </section>
     <section id="aboutSidebar">
-        <form action="" method="post">
+        <form action="<?=Router::Link('/Soening')?>" method="post">
             <input type="search" name="searchQuery" id="searchQuery" placeholder="Søg på sitet" required>
         </form>
         <article>

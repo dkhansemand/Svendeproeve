@@ -1,4 +1,4 @@
-
+<div class="container">
 
     <div class="cover">
         <h1>Siden blev ikke fundet i systemet <small>Fejl 40(4)</small></h1>
@@ -6,3 +6,5 @@
             <?php $msg = $msg ?? new FlashMessages(); echo  @$msg->hasErrors() ? $msg->display() : null; ?>
         </p>
     </div>
+
+</div>

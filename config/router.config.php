@@ -66,6 +66,12 @@ const ROUTES = array(
                         'view' => 'contact.view.php'
                     ],
                     [
+                        'path' => '/Soening',
+                        'controller' => 'SearchController',
+                        'model' => 'Search.model',
+                        'view' => 'search.view.php'
+                    ],
+                    [
                         'path' => '/Login',
                         'view' => 'Login.view.php',
                         'controller' => 'LoginController',
