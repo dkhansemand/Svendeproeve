@@ -20,5 +20,23 @@ class User extends Database
         }
     }
 
+    public static function GetUserInfo(int $ID) 
+    {
+        try
+        {
+            return (new self)->query("SELECT `userId`, `userEmail`, `fullname`, `userKm`, `userPhone`, `roleName` FROM `users`
+                                        INNER JOIN `userroles` ON `roleId` = `userRole`
+                                        LEFT JOIN `media` ON `mediaId` = `avatar`
+                                        WHERE `userId` = :ID", 
+                                [
+                                    ':ID' => $ID
+                                ])->fetch();
+        }
+        catch(PDOException $err)
+        {
+            return false;
+        }
+    }
+
    
 }

@@ -54,6 +54,7 @@ const ROUTES = array(
                     [
                         'path' => '/Min-Side',
                         'controller' => 'ProfileController',
+                        'model' => 'Profile.model',
                         'view' => 'profile.view.php',
                         'permissions' => []
                     ],
