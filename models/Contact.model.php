@@ -31,7 +31,7 @@ class ContactModel extends Model
 
     public function GetAllMessages() : array
     {
-        return $this->query("SELECT `contactId`, `contactName`, `contactEmail`, `contactMobile`, `contactMessage` FROM `contacts` ORDER BY `contactIs` DESC")->fetchAll();
+        return $this->query("SELECT `contactId`, `contactName`, `contactEmail`, `contactMobile`, `contactMessage` FROM `contacts` ORDER BY `contactId` DESC")->fetchAll();
     }
 
     public function DeleteMessageById(int $ID)

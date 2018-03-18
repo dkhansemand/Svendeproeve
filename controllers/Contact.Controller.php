@@ -35,4 +35,9 @@ class ContactController extends Core
         return ['err' => true, 'function' => ' data blev ikke modtaget til server. Prøv igen ved at klikke på "Send besked"'];
    }
 
+   public function DeleteMessage(int $ID)
+   {
+       return self::$Model->DeleteMessageById($ID);
+   }
+
 }

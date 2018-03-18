@@ -1,35 +1,22 @@
 <div class="container">
 <h2>Modtaget bedskeder:</h2>
 <section id="messagesView">
-    <article>
-        <h3>Fra: </h3>
-        <p>Email: </p>
-        <p>Telefonnummer: </p>
-        <p>Besked: </p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, tempora!</p>
-        
-            <a href="">Slet</a>
-        
-    </article>
-    <article>
-        <h3>Fra: </h3>
-        <p>Email: </p>
-        <p>Telefonnummer: </p>
-        <p>Besked: </p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, tempora!</p>
-        
-            <a href="">Slet</a>
-        
-    </article>
-    <article>
-        <h3>Fra: </h3>
-        <p>Email: </p>
-        <p>Telefonnummer: </p>
-        <p>Besked: </p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, tempora!</p>
-        
-            <a href="">Slet</a>
-        
-    </article>
+    <?php
+        foreach(View::CallModel()->GetAllMessages() as $message)
+        {
+    ?>
+            <article>
+                <h4>Fra: <?=$message->contactName?></h4>
+                <p>Email: <?=$message->contactEmail?></p>
+                <p>Telefonnummer: <?=$message->contactMobile ?? '(ikke angivet)'?></p>
+                <p>Besked: </p>
+                <p>
+                    <?=$message->contactMessage?>
+                </p>
+                <a href="<?=Router::Link('/Admin/Besked/Slet/'.$message->contactId)?>" class="btn-error">Slet</a>
+            </article>
+    <?php
+        }
+    ?>
 </section>
 </div>
