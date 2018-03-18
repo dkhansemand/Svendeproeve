@@ -8,7 +8,7 @@ class ContactModel extends Model
         parent::__construct();
     }
 
-    public function SubmitMessage(string $name, string $email, string $phone, string $message)
+    public function SubmitMessage(string $name, string $email, $phone, string $message)
     {
         try
         {
