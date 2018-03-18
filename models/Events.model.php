@@ -14,6 +14,18 @@ class EventsModel extends Model
                                     INNER JOIN `media` ON `eventCover` = `mediaId`")->fetchAll();
     }
 
+    public function GetEventSubs($eventId)
+    {
+        try
+        {
+            return $this->query("SELECT COUNT(`eventSubscriberId`) AS `eventSubs` FROM `eventsubscribers` WHERE `fkEventId` = :EID", [':EID' => $eventId])->fetch()->eventSubs;
+        }
+        catch(PDOException $err)
+        {
+ 
+        }
+    }
+
     public function GetCurrentEvents() : array
     {
         return $this->query("SELECT `eventsId`, `eventTitle`, `eventDescription`,`eventStartDate`, `filename`, `filepath` FROM `events`
