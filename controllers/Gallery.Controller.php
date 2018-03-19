@@ -114,10 +114,12 @@ class GalleryController extends Core
         {
             $filenameSplit = explode('_', $image->filename);
             $fullsize = self::$Model->GetMediaInfoByFilename($filenameSplit[2]);
-            if(unlink($path.$image->filepath.DS.$image->filename) && unlink($path.$fullsize->filepath.DS.$fullsize->filename) )
+            if(file_exists($path.$image->filepath.DS.$image->filename) && file_exists($path.$fullsize->filepath.DS.$fullsize->filename) )
             {
-                self::$Model->DeleteMediaId($image->mediaId) && self::$Model->DeleteMediaId($fullsize->mediaId);
+                /* unlink($path.$fullsize->filepath.DS.$fullsize->filename);
+                unlink($path.$image->filepath.DS.$image->filename); */
             }
+            self::$Model->DeleteMediaId($image->mediaId) && self::$Model->DeleteMediaId($fullsize->mediaId);
         }
         if(is_readable($images[0]->filepath) && count(scandir($images[0]->filepath)) == 2)
         {

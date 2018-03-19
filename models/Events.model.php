@@ -89,8 +89,18 @@ class EventsModel extends Model
 
     public function DeleteEvent(int $ID)
     {
-        $this->query("DELETE FROM `media` WHERE mediaId = (SELECT `eventCOver` FROM `events` WHERE `eventsId` = :ID);", [':ID' => $ID]);
-        return $this->query("DELETE FROM `events` WHERE `eventsId` = :ID", [':ID' => $ID]);
+        try
+        {
+            $mediaCover = $this->query("SELECT `eventCover` FROM `events` WHERE `eventsId` = :ID", [':ID' => $ID])->fetch();
+            $this->query("DELETE FROM `media` WHERE mediaId = :ID;", [':ID' => $mediaCover->eventCover]);
+            $this->query("DELETE FROM `eventsubscribers` WHERE `fkEventId` = :ID", [':ID' => $ID]);
+            $this->query("DELETE FROM `events` WHERE `eventsId` = :ID", [':ID' => $ID]);
+            return true;
+        }
+        catch(PdoException $err)
+        {
+            return false;
+        }
     }
 
     public function AddSubscriber($userId, $eventId)

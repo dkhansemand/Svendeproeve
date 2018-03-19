@@ -77,7 +77,7 @@ class EventsController extends Core
         $mediaLocation = __ROOT__ . DS . 'assets' . DS . 'media' . DS;
         $eventData = self::$Model->GetEventById($ID);
         $mediaFile = $mediaLocation . $eventData->filepath . $eventData->filename;
-        if(unlink($mediaFile) && self::$Model->DeleteEvent($ID))
+        if(self::$Model->DeleteEvent($ID))
         {
             return true;
         }

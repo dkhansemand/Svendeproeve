@@ -31,7 +31,9 @@
                             fileCurrent++
                             progressBar.value += fileCurrent
                             document.querySelector('#currentFile').innerText = fileCurrent
-                            document.querySelector('.file-area').appendChild(ImageContainer(btoa(data.target.result), file.name, file.type))
+                            document.querySelector('.file-area').appendChild(
+                                ImageContainer(btoa(data.target.result), file.name, file.type)
+                            )
                         }
                     }
                 })
@@ -43,6 +45,7 @@
                 }
             })
         })
+        
         let lastSelectedImage = null
         const ImageContainer = (src, id, mime) => {
             const Container = document.createElement('div')

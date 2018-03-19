@@ -31,11 +31,25 @@ class ContactModel extends Model
 
     public function GetAllMessages() : array
     {
-        return $this->query("SELECT `contactId`, `contactName`, `contactEmail`, `contactMobile`, `contactMessage` FROM `contacts` ORDER BY `contactId` DESC")->fetchAll();
+        try
+        {
+            return $this->query("SELECT `contactId`, `contactName`, `contactEmail`, `contactMobile`, `contactMessage` FROM `contacts` ORDER BY `contactId` DESC")->fetchAll();
+        }
+        catch(PDOException $err)
+        {
+            return [];
+        }
     }
 
     public function DeleteMessageById(int $ID)
     {
-        return $this->query("DELETE FROM `contacts` WHERE `contactId` = :ID", [':ID' => $ID]);
+        try
+        {
+            return $this->query("DELETE FROM `contacts` WHERE `contactId` = :ID", [':ID' => $ID]);
+        }
+        catch(PDOException $err)
+        {
+            return false;
+        }
     }
 }

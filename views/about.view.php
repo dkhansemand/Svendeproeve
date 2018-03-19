@@ -23,22 +23,22 @@
             <div class="product-item">
                 <img src="./assets/media/kajak01.jpg" alt="" srcset="">
                 <span class="product-info">
-                    <p>navn</p>
-                    <p>pris</p>
+                    <p>Blå kajak</p>
+                    <p>100 DKK</p>
                 </span>
             </div>
             <div class="product-item">
                 <img src="./assets/media/kajak01.jpg" alt="" srcset="">
                 <span class="product-info">
-                    <p>navn</p>
-                    <p>pris</p>
+                    <p>Blå kajak</p>
+                    <p>100 DKK</p>
                 </span>
             </div>
             <div class="product-item">
                 <img src="./assets/media/kajak01.jpg" alt="" srcset="">
                 <span class="product-info">
-                    <p>navn</p>
-                    <p>pris</p>
+                    <p>Blå kajak</p>
+                    <p>100 DKK</p>
                 </span>
             </div>
         </div>
@@ -54,7 +54,7 @@
                 <p>07/04 Nye kajakker til salg</p>
                 <p>15/02 Pagaj-medlemmer vinder...</p>
             </span>
-            <a href="" class="btn-accent">Nyheder &raquo;</a>
+            <a href="<?=Router::link('/Nyheder');?>" class="btn-accent">Nyheder &raquo;</a>
         </article>
         <form action="" id="newsletterForm" method="post">
             <p>Tilmeld nyhedsbrev</p>
@@ -68,7 +68,7 @@
             <p>Juli</p>
             <p>04. Tur til Gudenåen</p>
             <p>08. Weekenden i det sydfranske øhav</p>
-            <a href="" class="btn-accent">Kalender &raquo;</a>
+            <a href="<?=Router::link('/Arrangementer');?>" class="btn-accent">Kalender &raquo;</a>
         </article>
     </section>
 </section>
