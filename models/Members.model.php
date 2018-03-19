@@ -10,10 +10,17 @@ class MembersModel extends Model
 
     public function GetAllMembers() : array
     {
-        return $this->query("SELECT `userId`, `userEmail`, `fullname`, `userKm`, `userPhone`, `roleName`, `userLevelName` FROM `users`
+        try
+        {
+            return $this->query("SELECT `userId`, `userEmail`, `fullname`, `userKm`, `userPhone`, `roleName`, `userLevelName` FROM `users`
                                     INNER JOIN `userroles` ON `roleId` = `userRole`
                                     INNER JOIN `userlevels` ON `userKm` >= `userLevelReqKm`
                                     LEFT JOIN `media` ON `mediaId` = `avatar`")->fetchAll();
+                                    }
+        catch(PDOException $err)
+        {
+            return false;
+        }
     }
 
     public function GetUserRoles() : array
@@ -134,6 +141,13 @@ class MembersModel extends Model
 
     public function DeleteMember($ID)
     {
-        return $this->query("DELETE FROM `users` WHERE `userId` = :ID", [':ID' => $ID]);
+        try
+        {
+         return $this->query("DELETE FROM `users` WHERE `userId` = :ID", [':ID' => $ID]);
+        }
+        catch(PDOException $err)
+        {
+            return false;
+        }
     }
 }

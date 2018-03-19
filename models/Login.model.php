@@ -10,6 +10,8 @@ class LoginModel extends Model
 
     public function Login(string $user, string $pwd)
     {
+        try
+        {
         if(is_null($user) || is_null($pwd))
         {
             return false;
@@ -31,6 +33,11 @@ class LoginModel extends Model
             }
         }
         return false;
+    }
+    catch(PDOException $err)
+    {
+        return false;
+    }
     }
 
 }

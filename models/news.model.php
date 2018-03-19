@@ -10,6 +10,8 @@ class NewsModel extends Model
 
     public function InsertArticle(string $title, string $content, string $startDate, string $endDate)
     {
+        try
+        {
         return $this->query("INSERT INTO `news` SET `newsTitle` = :TITLE, 
                                                     `newsContent` = :CONTENT,
                                                     `newsStartDate` = :SDATE,
@@ -20,10 +22,17 @@ class NewsModel extends Model
                                         ':SDATE' => $startDate,
                                         ':EDATE' => $endDate
                                     ]);
+                                }
+                                catch(PDOException $err)
+                                {
+                                    return false;
+                                }
     }
 
     public function EditArticle(string $title, string $content, string $startDate, string $endDate, int $ID)
     {
+        try
+        {
         return $this->query("UPDATE `news` SET `newsTitle` = :TITLE, 
                                                `newsContent` = :CONTENT,
                                                `newsStartDate` = :SDATE,
@@ -36,25 +45,58 @@ class NewsModel extends Model
                                             ':EDATE' => $endDate,
                                             ':ID' => $ID
                                             ]);
+                                        }
+                                        catch(PDOException $err)
+                                        {
+                                            return false;
+                                        }
     }
 
     public function DeleteArticle(int $ID)
     {
-        return $this->query("DELETE FROM `news` WHERE `newsId` = :ID", [':ID' => $ID]);
+        try
+        {
+            return $this->query("DELETE FROM `news` WHERE `newsId` = :ID", [':ID' => $ID]);
+        }
+        catch(PDOException $err)
+        {
+            return false;
+        }
     }
 
     public function GetAllArticles() : array
     {
-        return $this->query("SELECT `newsId`,`newsTitle`, `newsContent`, `newsStartDate`, `newsEndDate` FROM `news` ORDER BY `newsId` DESC")->fetchAll();
+        try
+        {
+            return $this->query("SELECT `newsId`,`newsTitle`, `newsContent`, `newsStartDate`, `newsEndDate` FROM `news` ORDER BY `newsId` DESC")->fetchAll();
+        }
+        catch(PDOException $err)
+        {
+            return false;
+        }
     }
 
     public function GetArticleById(int $ID) : stdClass
     {
-        return $this->query("SELECT `newsId`,`newsTitle`, `newsContent`, `newsStartDate`, `newsEndDate` FROM `news` WHERE `newsId` = :ID", [':ID' => $ID])->fetch();
+        try
+        {
+            return $this->query("SELECT `newsId`,`newsTitle`, `newsContent`, `newsStartDate`, `newsEndDate` FROM `news` WHERE `newsId` = :ID", [':ID' => $ID])->fetch();
+        }
+        catch(PDOException $err)
+        {
+            return false;
+        }        
     }
 
     public function GetAllArticlesByDate() : array
     {
-        return $this->query("SELECT `newsId`,`newsTitle`, `newsContent`, `newsStartDate` FROM `news` WHERE DATE(NOW()) between `newsStartDate` AND `newsEndDate`ORDER BY `newsStartDate` DESC;")->fetchAll();
+        try
+        {
+            return $this->query("SELECT `newsId`,`newsTitle`, `newsContent`, `newsStartDate` FROM `news` WHERE DATE(NOW()) between `newsStartDate` AND `newsEndDate`ORDER BY `newsStartDate` DESC;")->fetchAll();
+        }
+        catch(PDOException $err)
+        {
+            return false;
+        }
     }
 }

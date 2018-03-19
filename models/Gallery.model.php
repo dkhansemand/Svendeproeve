@@ -9,11 +9,20 @@ class GalleryModel extends Model
 
     public function GetEvents() : array
     {
-        return $this->query("SELECT `eventsId`, `eventTitle` FROM `events` ORDER BY `eventTitle` ASC")->fetchAll();
+        try
+        {
+            return $this->query("SELECT `eventsId`, `eventTitle` FROM `events` ORDER BY `eventTitle` ASC")->fetchAll();
+        }
+        catch(PDOException $err)
+        {
+            return false;
+        }
     }
 
     public function InsertNewGallery(string $title, $event, int $albumCover, array $images)
     {
+        try
+        {
         $this->query("INSERT INTO `albums` SET `albumName` = :ANAME,
                                                 `albumCoverId` = :CID,
                                                 `albumEventId` = :EID;",
@@ -31,9 +40,16 @@ class GalleryModel extends Model
         }
         return true;
     }
+    catch(PDOException $err)
+    {
+        return false;
+    }
+    }
 
     public function EditGallery(string $title, $event, int $albumCover, array $images = [], int $ID)
     {
+        try
+        {
         $this->query("UPDATE `albums` SET `albumName` = :ANAME,
                                             `albumCoverId` = :CID,
                                             `albumEventId` = :EID
@@ -55,10 +71,22 @@ class GalleryModel extends Model
         }
         return true;
     }
+    catch(PDOException $err)
+    {
+        return false;
+    }
+    }
 
     public function DeleteMediaId(int $mediaId)
     {
-        return $this->query("DELETE FROM `gallery` WHERE `fkGalleryMediaId` = :ID; DELETE FROM `media` WHERE `mediaId` = :ID", [':ID' => $mediaId]);
+        try
+        {
+            return $this->query("DELETE FROM `gallery` WHERE `fkGalleryMediaId` = :ID; DELETE FROM `media` WHERE `mediaId` = :ID", [':ID' => $mediaId]);
+        }
+        catch(PDOException $err)
+        {
+            return false;
+        }
     }
 
     public function GetMediaInfoById(int $ID)

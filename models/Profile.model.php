@@ -29,8 +29,15 @@ class ProfileModel extends Model
 
     public function GetSubscribedEvents($userId)
     {
+        try
+        {
         return $this->query("SELECT `eventSubscriberId`, `eventTitle`, `eventStartDate` FROM `eventsubscribers` 
                                         INNER JOIN `events` ON `eventsId` = `fkEventId`
                                         WHERE `fkEventSubUserId` = :ID", [':ID' => $userId])->fetchAll();
+                                        }
+                                        catch(PDOException $err)
+                                        {
+                                            return false;
+                                        }
     }
 }
