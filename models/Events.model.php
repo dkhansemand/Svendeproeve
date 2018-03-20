@@ -127,9 +127,9 @@ class EventsModel extends Model
         try
         {
             $mediaCover = $this->query("SELECT `eventCover` FROM `events` WHERE `eventsId` = :ID", [':ID' => $ID])->fetch();
-            $this->query("DELETE FROM `media` WHERE mediaId = :ID;", [':ID' => $mediaCover->eventCover]);
             $this->query("DELETE FROM `eventsubscribers` WHERE `fkEventId` = :ID", [':ID' => $ID]);
             $this->query("DELETE FROM `events` WHERE `eventsId` = :ID", [':ID' => $ID]);
+            $this->query("DELETE FROM `media` WHERE mediaId = :ID;", [':ID' => $mediaCover->eventCover]);
             return true;
         }
         catch(PdoException $err)
